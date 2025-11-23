@@ -4,6 +4,7 @@
   },
 
   "INTRODUCTION": {
+    "I_AM": "I’M",
     "ROLE": "Intermediate Software Developer",
     "DISCOVER_MY_SKILL": "Discover My Skills"
   },
@@ -15,9 +16,10 @@
     "CONTACT": "Contact"
   },
   "CV": {
-    "HEADER": "Download the Full CV",
+    "TITLE": "Want the full details?",
+    "HEADER": "Download my complete CV below to learn more.",
     "BODY": "For your convenience, you can download a complete PDF copy of my CV for easy printing and review.",
-    "DOWNLOAD_CV": "Download Cv",
+    "DOWNLOAD_CV": "DOWNLOAD RESUME",
     "MODAL": {
       "HEADER": "Select Your CV Language",
       "TABLE_HEADING": "Please choose your preferred language below to download the CV file.",
