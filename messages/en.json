@@ -1,0 +1,36 @@
+{
+  "GENERIC": {
+    "CANCEL": "Cancel"
+  },
+
+  "INTRODUCTION": {
+    "ROLE": "Intermediate Software Developer",
+    "DISCOVER_MY_SKILL": "Discover My Skills"
+  },
+
+  "MENU_ITEMS": {
+    "HOME": "Home",
+    "EXPERIENCE": "Experience",
+    "DOWNLOAD_RESUME": "Download Resume",
+    "CONTACT": "Contact"
+  },
+  "CV": {
+    "HEADER": "Download the Full CV",
+    "BODY": "For your convenience, you can download a complete PDF copy of my CV for easy printing and review.",
+    "DOWNLOAD_CV": "Download Cv",
+    "MODAL": {
+      "HEADER": "Select Your CV Language",
+      "TABLE_HEADING": "Please choose your preferred language below to download the CV file.",
+      "LANGUAGE": "language"
+    }
+  },
+  "GOAL_SECTION": {
+    "STARTED_CODING": "Began Programming in High School",
+    "STARTED_COLLEGE": "Entered College to Advance Skills in Computer Science",
+    "STARTED_COMPRSA": "Began Professional Development Career",
+    "PROJECT_FOR_THE_YEAR": "Received 'Project of the Year' Award",
+    "STARTED_CODE_REVIEW": "Began Backend Code Review Responsibilities",
+    "STARTED_REVIEWING_MERGING": "Assumed Responsibility for Code Merging and Deployment",
+    "BECAME_INTERMIDIAT_DEV": "Advanced to an Intermediate Developer Role"
+  }
+}

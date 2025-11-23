@@ -1,0 +1,34 @@
+{
+  "GENERIC": {
+    "CANCEL": "Cancelar"
+  },
+  "INTRODUCTION": {
+    "ROLE": "Desarrollador de Software Intermedio",
+    "DISCOVER_MY_SKILL": "Descubrir Mis Habilidades"
+  },
+  "MENU_ITEMS": {
+    "HOME": "Inicio",
+    "EXPERIENCE": "Experiencia",
+    "DOWNLOAD_RESUME": "Descargar Currículum",
+    "CONTACT": "Contacto"
+  },
+  "CV": {
+    "HEADER": "Descargar el Currículum Completo",
+    "BODY": "Para su comodidad, puede descargar una copia completa en PDF de mi currículum para una fácil impresión y revisión.",
+    "DOWNLOAD_CV": "Descargar CV",
+    "MODAL": {
+      "HEADER": "Seleccionar el Idioma del CV",
+      "TABLE_HEADING": "Por favor, elija su idioma preferido a continuación para descargar el archivo CV.",
+      "LANGUAGE": "Idioma"
+    }
+  },
+  "GOAL_SECTION": {
+    "STARTED_CODING": "Comencé a Programar en la Escuela Secundaria",
+    "STARTED_COLLEGE": "Ingresé a la Universidad para Avanzar Habilidades en Ciencias de la Computación",
+    "STARTED_COMPRSA": "Comencé mi Carrera de Desarrollo Profesional",
+    "PROJECT_FOR_THE_YEAR": "Recibí el Premio 'Proyecto del Año'",
+    "STARTED_CODE_REVIEW": "Asumí Responsabilidades de Revisión de Código Backend",
+    "STARTED_REVIEWING_MERGING": "Asumí la Responsabilidad de Fusión y Despliegue de Código",
+    "BECAME_INTERMIDIAT_DEV": "Avancé a un Rol de Desarrollador Intermedio"
+  }
+}
