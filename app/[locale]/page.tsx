@@ -3,55 +3,112 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 import Image from 'next/image';
 import { UserDetailsConstant } from '@/constants/user-details';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import { AvailableTranslations } from '@/constants/locales';
+import { Download } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 // import { TRANSLATION_KEYS } from '@/constants/translations';
 
 export default function HomePage() {
   const t = useTranslations();
   const user = UserDetailsConstant;
+  const availableTranslations = AvailableTranslations;
+
+  const downloadCv = (code: string) => {};
 
   return (
     <div className="w-full">
       {/* ================= HERO SECTION ================= */}
+      {/* ================= HERO SECTION ================= */}
 
-      <section className="relative w-full h-screen overflow-hidden">
+      <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
         <Image
-          src="/images/DSC00295.jpg"
+          src="/images/intro-me.png"
           alt="Top background"
           fill
           className="
-    object-cover
-    [mask-image:linear-gradient(to_bottom,black_80%,transparent)]
-    bg-[#233143]
-  "
+      opacity-95
+      object-cover
+      [mask-image:linear-gradient(to_bottom,black_80%,transparent)]
+      bg-[#233143]
+    "
         />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-extrabold">
-            {t('INTRODUCTION.I_AM')}
-            <br />
+        {/* TEXT IN HERO */}
+        <div className="relative z-10 flex flex-col items-center text-center text-white">
+          <h1 className="text-5xl md:text-6xl font-extrabold drop-shadow-[2px_2px_0px_black]">
             {user.name}
             <br />
             {user.surname}
           </h1>
-          <p className="mt-4 text-xl opacity-90">{t('INTRODUCTION.ROLE')}</p>
+          <h2 className="mt-4 text-xl opacity-90">{t('INTRODUCTION.ROLE')}</h2>
         </div>
       </section>
 
-      {/* FLOATING CARD FIXED PROPERLY */}
-      <div className="absolute w-full top-[83vh] flex justify-center z-20">
+      {/* FLOATING CARD FIXED + PREDICTABLE */}
+      <div className="relative w-full flex justify-center -mt-24 z-20">
         <div className="w-[90%] md:w-[55%] bg-[#233143] p-12 rounded-lg shadow-2xl text-white text-center">
-          {/* <div className="w-12 h-12 rounded-full border border-green-400 flex items-center justify-center text-green-400 mx-auto mb-6">
-            Need A Hard Copy?
-          </div> */}
+          <h2 className="opacity-90 mb-6">{t('CV.TITLE')}</h2>
+          <h2 className="opacity-90 mb-6">{t('CV.HEADER')}</h2>
 
-          <p className="opacity-90 mb-6">{t('CV.TITLE')}</p>
-          <p className="opacity-90 mb-6">{t('CV.HEADER')}</p>
+          <Dialog>
+            <DialogTrigger className="border border-green-400 px-6 py-2 rounded text-green-400 hover:bg-green-400 hover:text-black transition">
+              {t('CV.DOWNLOAD_CV')}
+            </DialogTrigger>
 
-          <button className="border border-green-400 px-6 py-2 rounded text-green-400 hover:bg-green-400 hover:text-black transition">
-            {t('CV.DOWNLOAD_CV')}
-          </button>
+            <DialogContent className="!bg-[#233143] !text-white">
+              <DialogHeader>
+                <DialogTitle className="flex items-center justify-center">
+                  {t('CV.MODAL.HEADER')}
+                </DialogTitle>
+              </DialogHeader>
+
+              <DialogDescription>
+                <Table>
+                  <TableHeader>
+                    <TableRow className="pt-2 pb-0 flex items-center justify-center">
+                      <TableHead className="!text-white">{t('CV.MODAL.LANGUAGE')}</TableHead>
+                    </TableRow>
+                  </TableHeader>
+
+                  <TableBody>
+                    {availableTranslations.map((_, index) => (
+                      <TableRow
+                        key={_.code}
+                        className="border-b border-gray-300 hover:bg-gray-900 cursor-pointer"
+                      >
+                        <TableCell className="flex items-center justify-center font-medium">
+                          <a href={`files/${_.code}.zip`} download>
+                            {_.name}
+                          </a>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </DialogDescription>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
+
+      {/* FLOATING CARD  */}
 
       <section className="relative w-full h-screen overflow-hidden">
         <Image
@@ -64,177 +121,47 @@ export default function HomePage() {
     bg-[#233143]
   "
         />
-
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-[4px]">01 PROFESSIONAL</h2>
-          <p className="mt-2 text-lg opacity-90">MY KNOWLEDGE LEVEL IN SOFTWARE</p>
+        <div className="relative z-20 mt-10 flex justify-center  flex-row ">
+          <Card className="relative  flex justify-center bg-[#2d3b4d] text-white shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-center">My Stats</CardTitle>
+              <CardDescription className="text-center text-gray-300">
+                Visual overview below
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">Chart here</div>
+            </CardContent>
+          </Card>
+          <Card className="relative flex justify-center bg-[#2d3b4d] text-white shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-center">My Stats</CardTitle>
+              <CardDescription className="text-center text-gray-300">
+                Visual overview below
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">Chart here</div>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </div>
   );
 
-  // return (
-  //   // Main container: full height, vertical flex layout, and relative for positioning the modal
-  //   <div className="relative flex flex-col min-h-screen bg-gray-50">
-  //     {/* 1. TOP IMAGE SECTION */}
-  //     {/* The height is increased slightly to give space for the modal to overlap */}
-  //     <div className="relative w-full h-[50vh] overflow-hidden">
-  //       <Image
-  //         src="/images/fibre-optic.jpg"
-  //         alt="Top background image"
-  //         fill
-  //         priority
-  //         style={{ objectFit: 'cover' }}
-  //       />
-  //     </div>
+  <section className="w-full bg-[#233143] py-24">
+    <div className="max-w-6xl mx-auto px-6">
+      <h2 className="text-white text-3xl font-bold mb-10 text-center">02 PROFESSIONAL METRICS</h2>
+    </div>
+  </section>;
 
-  //     {/* 2. CENTRAL CONTENT SECTION (The seamless modal - ABSOLUTELY POSITIONED) */}
-  //     {/* - absolute: Takes it out of the flow.
-  //         - top-1/2: Positions the top edge at 50% down the container.
-  //         - left-1/2: Positions the left edge at 50% across the container.
-  //         - -translate-x-1/2 -translate-y-1/2: Centers the block perfectly.
-  //         - max-w-4xl: Responsive width cap.
-  //     */}
-  //     <div
-  //       className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-  //                     w-11/12 max-w-4xl p-8 bg-white rounded-xl shadow-2xl text-center z-10
-  //                     md:w-3/4 lg:w-2/3"
-  //     >
-  //       <h2 className="text-3xl font-bold text-gray-800 mb-4">Seamless Text Area</h2>
-  //       <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-  //         This block now floats directly over the background transition, making the images touch!
-  //       </p>
-
-  //       <textarea
-  //         placeholder="Start writing here..."
-  //         rows={8}
-  //         className="w-full p-4 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-gray-700 resize-y"
-  //       />
-
-  //       <a
-  //         href="files/aus-cv-test.zip" // Use the path relative to the public folder
-  //         download // Tells the browser to download the file
-  //         className="inline-block mt-8 px-8 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300 ease-in-out"
-  //       >
-  //         Download Resume
-  //       </a>
-  //     </div>
-
-  //     {/* 3. BOTTOM IMAGE SECTION */}
-  //     {/* The second image starts immediately after the first, fulfilling the "touch" requirement */}
-  //     <div className="relative w-full h-[50vh] overflow-hidden">
-  //       <Image
-  //         src="/images/progress-mountain.jpg"
-  //         alt="Bottom background image"
-  //         fill
-  //         style={{ objectFit: 'cover' }}
-  //       />
-  //     </div>
-  //   </div>
-  // );
+  <Card className="bg-[#2d3b4d] text-white shadow-xl">
+    <CardHeader>
+      <CardTitle className="text-center">My Stats</CardTitle>
+      <CardDescription className="text-center text-gray-300">Visual overview below</CardDescription>
+    </CardHeader>
+    <CardContent className="p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">Chart here</div>
+    </CardContent>
+  </Card>;
 }
-
-// return (
-//   <main style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
-//     <LanguageSwitcher />
-//     <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>{t('INTRODUCTION.ROLE')}</h1>
-//     <p style={{ fontSize: '1.2rem', marginBottom: '2rem' }}>
-//       {t('INTRODUCTION.DISCOVER_MY_SKILL')}
-//     </p>
-//     <nav style={{ marginTop: '2rem' }}>
-//       <ul
-//         style={{ listStyle: 'none', padding: 0, display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
-//       >
-//         <li>
-//           <a href="#home" style={{ textDecoration: 'none', color: 'inherit' }}>
-//             {t('MENU_ITEMS.HOME')}
-//           </a>
-//         </li>
-//         <li>
-//           <a href="#experience" style={{ textDecoration: 'none', color: 'inherit' }}>
-//             {t('MENU_ITEMS.EXPERIENCE')}
-//           </a>
-//         </li>
-//         <li>
-//           <a href="#contact" style={{ textDecoration: 'none', color: 'inherit' }}>
-//             {t('MENU_ITEMS.CONTACT')}
-//           </a>
-//         </li>
-//       </ul>
-//     </nav>
-//   </main>
-// );
-//}
-
-// import { getDictionary, Locale } from '@/lib/dictionaries/translation-dictionary';
-// import Image from 'next/image';
-
-// interface LandingPageParams {
-//   params: {
-//     locale: Locale;
-//   };
-// }
-
-// export default async function LandingPage({ params: { locale } }: LandingPageParams) {
-//   const translationService = await getDictionary(locale);
-
-//   return (
-//     // Main container: full height, vertical flex layout, and relative for positioning the modal
-//     <div className="relative flex flex-col min-h-screen bg-gray-50">
-//       {/* 1. TOP IMAGE SECTION */}
-//       {/* The height is increased slightly to give space for the modal to overlap */}
-//       <div className="relative w-full h-[50vh] overflow-hidden">
-//         <Image
-//           src="/images/fibre-optic.jpg"
-//           alt="Top background image"
-//           fill
-//           priority
-//           style={{ objectFit: 'cover' }}
-//         />
-//       </div>
-
-//       {/* 2. CENTRAL CONTENT SECTION (The seamless modal - ABSOLUTELY POSITIONED) */}
-//       {/* - absolute: Takes it out of the flow.
-//           - top-1/2: Positions the top edge at 50% down the container.
-//           - left-1/2: Positions the left edge at 50% across the container.
-//           - -translate-x-1/2 -translate-y-1/2: Centers the block perfectly.
-//           - max-w-4xl: Responsive width cap.
-//       */}
-//       <div
-//         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-//                       w-11/12 max-w-4xl p-8 bg-white rounded-xl shadow-2xl text-center z-10
-//                       md:w-3/4 lg:w-2/3"
-//       >
-//         <h2 className="text-3xl font-bold text-gray-800 mb-4">Seamless Text Area</h2>
-//         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-//           This block now floats directly over the background transition, making the images touch!
-//         </p>
-
-//         <textarea
-//           placeholder="Start writing here..."
-//           rows={8}
-//           className="w-full p-4 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-gray-700 resize-y"
-//         />
-
-//         <a
-//           href="files/aus-cv-test.zip" // Use the path relative to the public folder
-//           download // Tells the browser to download the file
-//           className="inline-block mt-8 px-8 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-300 ease-in-out"
-//         >
-//           Download Resume
-//         </a>
-//       </div>
-
-//       {/* 3. BOTTOM IMAGE SECTION */}
-//       {/* The second image starts immediately after the first, fulfilling the "touch" requirement */}
-//       <div className="relative w-full h-[50vh] overflow-hidden">
-//         <Image
-//           src="/images/progress-mountain.jpg"
-//           alt="Bottom background image"
-//           fill
-//           style={{ objectFit: 'cover' }}
-//         />
-//       </div>
-//     </div>
-//   );
-// }

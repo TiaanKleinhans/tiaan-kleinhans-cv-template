@@ -4,7 +4,6 @@
   },
 
   "INTRODUCTION": {
-    "I_AM": "I’M",
     "ROLE": "Intermediate Software Developer",
     "DISCOVER_MY_SKILL": "Discover My Skills"
   },
@@ -23,7 +22,7 @@
     "MODAL": {
       "HEADER": "Select Your CV Language",
       "TABLE_HEADING": "Please choose your preferred language below to download the CV file.",
-      "LANGUAGE": "language"
+      "LANGUAGE": "Available Language"
     }
   },
   "GOAL_SECTION": {
