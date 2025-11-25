@@ -23,6 +23,8 @@ import {
 import { AvailableTranslations } from '@/constants/locales';
 import { Download } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ChartCard } from '@/components/ui/chart-card';
+import { RadarChartDots } from '@/components/ui/radar-chart';
 // import { TRANSLATION_KEYS } from '@/constants/translations';
 
 export default function HomePage() {
@@ -46,7 +48,7 @@ export default function HomePage() {
       opacity-95
       object-cover
       [mask-image:linear-gradient(to_bottom,black_80%,transparent)]
-      bg-[#233143]
+      bg-[var(--primary)]
     "
         />
 
@@ -63,7 +65,7 @@ export default function HomePage() {
 
       {/* FLOATING CARD FIXED + PREDICTABLE */}
       <div className="relative w-full flex justify-center -mt-24 z-20">
-        <div className="w-[90%] md:w-[55%] bg-[#233143] p-12 rounded-lg shadow-2xl text-white text-center">
+        <div className="w-[90%] md:w-[55%] bg-[var(--primary)] p-12 rounded-lg shadow-2xl text-white text-center">
           <h2 className="opacity-90 mb-6">{t('CV.TITLE')}</h2>
           <h2 className="opacity-90 mb-6">{t('CV.HEADER')}</h2>
 
@@ -72,37 +74,36 @@ export default function HomePage() {
               {t('CV.DOWNLOAD_CV')}
             </DialogTrigger>
 
-            <DialogContent className="!bg-[#233143] !text-white">
+            <DialogContent className="!bg-[var(--primary)] !text-white">
+              {/* <DialogContent className="!bg-[#233143] !text-white"> */}
               <DialogHeader>
                 <DialogTitle className="flex items-center justify-center">
                   {t('CV.MODAL.HEADER')}
                 </DialogTitle>
               </DialogHeader>
 
-              <DialogDescription>
-                <Table>
-                  <TableHeader>
-                    <TableRow className="pt-2 pb-0 flex items-center justify-center">
-                      <TableHead className="!text-white">{t('CV.MODAL.LANGUAGE')}</TableHead>
-                    </TableRow>
-                  </TableHeader>
+              <Table>
+                <TableHeader>
+                  <TableRow className="pt-2 pb-0 flex items-center justify-center">
+                    <TableHead className="!text-white">{t('CV.MODAL.LANGUAGE')}</TableHead>
+                  </TableRow>
+                </TableHeader>
 
-                  <TableBody>
-                    {availableTranslations.map((_, index) => (
-                      <TableRow
-                        key={_.code}
-                        className="border-b border-gray-300 hover:bg-gray-900 cursor-pointer"
-                      >
-                        <TableCell className="flex items-center justify-center font-medium">
-                          <a href={`files/${_.code}.zip`} download>
-                            {_.name}
-                          </a>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </DialogDescription>
+                <TableBody>
+                  {availableTranslations.map((_, index) => (
+                    <TableRow
+                      key={_.code}
+                      className="border-b border-gray-300 hover:bg-gray-900 cursor-pointer"
+                    >
+                      <TableCell className="flex items-center justify-center font-medium">
+                        <a href={`files/${_.code}.zip`} download>
+                          {_.name}
+                        </a>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </DialogContent>
           </Dialog>
         </div>
@@ -118,44 +119,80 @@ export default function HomePage() {
           className="
     object-cover
     [mask-image:linear-gradient(to_top,black_80%,transparent)]
-    bg-[#233143]
+   
   "
         />
-        <div className="relative z-20 mt-10 flex justify-center  flex-row ">
-          <Card className="relative  flex justify-center bg-[#2d3b4d] text-white shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-center">My Stats</CardTitle>
-              <CardDescription className="text-center text-gray-300">
-                Visual overview below
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">Chart here</div>
-            </CardContent>
-          </Card>
-          <Card className="relative flex justify-center bg-[#2d3b4d] text-white shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-center">My Stats</CardTitle>
-              <CardDescription className="text-center text-gray-300">
-                Visual overview below
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">Chart here</div>
-            </CardContent>
-          </Card>
+
+        {/* Chart Cards */}
+        <div className="relative gap-4 z-20 mt-10 flex flex-wrap justify-center">
+          <ChartCard
+            title="My Stats"
+            description="Visual overview below"
+            className="w-full md:w-1/2 lg:w-1/3"
+          >
+            <RadarChartDots />
+          </ChartCard>
+
+          <ChartCard
+            title="Performance"
+            description="Something else"
+            className="w-full md:w-1/2 lg:w-1/3"
+          >
+            <div>Chart here</div>
+          </ChartCard>
+
+          <ChartCard title="Another Card" className="w-full md:w-1/2 lg:w-1/3">
+            <div>Chart here</div>
+          </ChartCard>
         </div>
+        {/* Chart Cards */}
+        {/* <div className="relative gap-4 z-20 mt-10 flex justify-evenly flex-row ">
+          <Card className="relative w-1/3  flex justify-center bg-[#2d3b4d] text-white shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-center">My Stats</CardTitle>
+              <CardDescription className="text-center text-gray-300">
+                Visual overview below
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">Chart here</div>
+            </CardContent>
+          </Card>
+          <Card className="relative w-1/3 flex justify-center bg-[#2d3b4d] text-white shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-center">My Stats</CardTitle>
+              <CardDescription className="text-center text-gray-300">
+                Visual overview below
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">Chart here</div>
+            </CardContent>
+          </Card>
+
+          <Card className="relative w-1/3 flex justify-center bg-[#2d3b4d] text-white shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-center">My Stats</CardTitle>
+              <CardDescription className="text-center text-gray-300">
+                Visual overview below
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">Chart here</div>
+            </CardContent>
+          </Card>
+        </div> */}
       </section>
     </div>
   );
 
-  <section className="w-full bg-[#233143] py-24">
+  <section className="w-full bg-[var(--primary)] py-24">
     <div className="max-w-6xl mx-auto px-6">
       <h2 className="text-white text-3xl font-bold mb-10 text-center">02 PROFESSIONAL METRICS</h2>
     </div>
   </section>;
 
-  <Card className="bg-[#2d3b4d] text-white shadow-xl">
+  <Card className="bg-[var(--primary)] text-white shadow-xl">
     <CardHeader>
       <CardTitle className="text-center">My Stats</CardTitle>
       <CardDescription className="text-center text-gray-300">Visual overview below</CardDescription>
