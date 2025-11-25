@@ -6,7 +6,6 @@ import { UserDetailsConstant } from '@/constants/user-details';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -14,7 +13,6 @@ import {
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -24,7 +22,8 @@ import { AvailableTranslations } from '@/constants/locales';
 import { Download } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartCard } from '@/components/ui/chart-card';
-import { RadarChartDots } from '@/components/ui/radar-chart';
+import { ReusableRadarChart } from '@/components/ui/radar-chart';
+
 // import { TRANSLATION_KEYS } from '@/constants/translations';
 
 export default function HomePage() {
@@ -32,11 +31,18 @@ export default function HomePage() {
   const user = UserDetailsConstant;
   const availableTranslations = AvailableTranslations;
 
-  const downloadCv = (code: string) => {};
+  const data = [
+    { work: 'Conflict Resolution', personality: 'Confidence', workValue: 7, personalityValue: 8 },
+    { work: 'Team Orientation', personality: 'Openness', workValue: 8, personalityValue: 9 },
+    { work: 'Leadership', personality: 'Adaptability', workValue: 7, personalityValue: 9 },
+    { work: 'Mentorship', personality: 'Self-Awareness', workValue: 9, personalityValue: 8 },
+    { work: 'Networking', personality: 'Motivation', workValue: 6, personalityValue: 7 },
+    { work: 'Humility', personality: 'Trustworthiness', workValue: 7, personalityValue: 10 },
+    { work: 'Decision-Making', personality: 'Respectfulness', workValue: 8, personalityValue: 9 },
+  ];
 
   return (
     <div className="w-full">
-      {/* ================= HERO SECTION ================= */}
       {/* ================= HERO SECTION ================= */}
 
       <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
@@ -124,64 +130,58 @@ export default function HomePage() {
         />
 
         {/* Chart Cards */}
-        <div className="relative gap-4 z-20 mt-10 flex flex-wrap justify-center">
-          <ChartCard
-            title="My Stats"
-            description="Visual overview below"
-            className="w-full md:w-1/2 lg:w-1/3"
-          >
-            <RadarChartDots />
+        {/* <div className="relative gap-4 z-20 mt-10 flex flex-wrap justify-center">
+          <ChartCard title="TRANSLATION Please" className="w-[90%] md:w-1/2 lg:w-1/2">
+            <ReusableRadarChart
+              data={data}
+              angleKey="work"
+              dataKey="workValue"
+              radiusDomain={[0, 10]}
+              strokeColor="#82a6aa"
+              fillColor="#82a6aa"
+            />
           </ChartCard>
 
-          <ChartCard
-            title="Performance"
-            description="Something else"
-            className="w-full md:w-1/2 lg:w-1/3"
-          >
-            <div>Chart here</div>
+          <ChartCard title="TRANSLATION Please" className="w-[90%] md:w-1/2 lg:w-1/2">
+            <ReusableRadarChart
+              data={data}
+              angleKey="personality"
+              dataKey="personalityValue"
+              radiusDomain={[0, 10]}
+              strokeColor="#82a6aa"
+              fillColor="#82a6aa"
+            />
           </ChartCard>
 
           <ChartCard title="Another Card" className="w-full md:w-1/2 lg:w-1/3">
             <div>Chart here</div>
           </ChartCard>
-        </div>
-        {/* Chart Cards */}
-        {/* <div className="relative gap-4 z-20 mt-10 flex justify-evenly flex-row ">
-          <Card className="relative w-1/3  flex justify-center bg-[#2d3b4d] text-white shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-center">My Stats</CardTitle>
-              <CardDescription className="text-center text-gray-300">
-                Visual overview below
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">Chart here</div>
-            </CardContent>
-          </Card>
-          <Card className="relative w-1/3 flex justify-center bg-[#2d3b4d] text-white shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-center">My Stats</CardTitle>
-              <CardDescription className="text-center text-gray-300">
-                Visual overview below
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">Chart here</div>
-            </CardContent>
-          </Card>
-
-          <Card className="relative w-1/3 flex justify-center bg-[#2d3b4d] text-white shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-center">My Stats</CardTitle>
-              <CardDescription className="text-center text-gray-300">
-                Visual overview below
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">Chart here</div>
-            </CardContent>
-          </Card>
         </div> */}
+        <div className="relative gap-4 z-20 mt-10 flex flex-wrap justify-center">
+          <ChartCard title="TRANSLATION Please" className="w-full md:w-1/2 lg:w-1/2">
+            <ReusableRadarChart
+              data={data}
+              angleKey="work"
+              dataKey="workValue"
+              radiusDomain={[0, 10]}
+              strokeColor="#82a6aa"
+              fillColor="#82a6aa"
+            />
+          </ChartCard>
+
+          <ChartCard title="TRANSLATION Please" className="w-full md:w-1/2 lg:w-1/2">
+            <ReusableRadarChart
+              data={data}
+              angleKey="personality"
+              dataKey="personalityValue"
+              radiusDomain={[0, 10]}
+              strokeColor="#82a6aa"
+              fillColor="#82a6aa"
+            />
+          </ChartCard>
+        </div>
+
+        {/* Chart Cards */}
       </section>
     </div>
   );

@@ -11,9 +11,7 @@ interface ChartCardProps {
 
 export function ChartCard({ title, description, children, className = '' }: ChartCardProps) {
   return (
-    <Card
-      className={`relative w-1/3 flex justify-center bg-[#233143] text-white shadow-xl ${className}`}
-    >
+    <Card className={`!pb-0 flex justify-center bg-[#233143] text-white shadow-xl ${className}`}>
       <CardHeader>
         <CardTitle className="text-center">{title}</CardTitle>
         {description && (
@@ -21,7 +19,7 @@ export function ChartCard({ title, description, children, className = '' }: Char
         )}
       </CardHeader>
 
-      <CardContent className="p-6">{children}</CardContent>
+      <CardContent className="!pt-0">{children}</CardContent>
     </Card>
   );
 }
