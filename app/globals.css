@@ -3,6 +3,7 @@
 :root {
   --white: #ffffff;
   --primary: #233143;
+  --secondary: #4ade80;
 }
 
 @theme inline {

@@ -157,26 +157,27 @@ export default function HomePage() {
             <div>Chart here</div>
           </ChartCard>
         </div> */}
-        <div className="relative gap-4 z-20 mt-10 flex flex-wrap justify-center">
-          <ChartCard title="TRANSLATION Please" className="w-full md:w-1/2 lg:w-1/2">
+
+        <div className="relative z-20 mt-10 flex flex-wrap justify-center gap-4 sm:gap-4">
+          <ChartCard title="TRANSLATION Please" className="w-[80%] sm:w-[48%] lg:w-[42%]">
             <ReusableRadarChart
               data={data}
               angleKey="work"
               dataKey="workValue"
               radiusDomain={[0, 10]}
-              strokeColor="#82a6aa"
-              fillColor="#82a6aa"
+              strokeColor="var(--white)"
+              fillColor="var(--white)"
             />
           </ChartCard>
 
-          <ChartCard title="TRANSLATION Please" className="w-full md:w-1/2 lg:w-1/2">
+          <ChartCard title="TRANSLATION Please" className="w-[80%] sm:w-[48%] lg:w-[42%]">
             <ReusableRadarChart
               data={data}
               angleKey="personality"
               dataKey="personalityValue"
               radiusDomain={[0, 10]}
-              strokeColor="#82a6aa"
-              fillColor="#82a6aa"
+              strokeColor="var(--white)"
+              fillColor="var(--white)"
             />
           </ChartCard>
         </div>
