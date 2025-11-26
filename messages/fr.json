@@ -5,7 +5,7 @@
 
   "INTRODUCTION": {
     "ROLE": "Développeur Logiciel Intermédiaire",
-    "DISCOVER_MY_SKILL": "Découvrez Mes Compétences"
+    "DISCOVER_MY_SKILL": "Découvrir Mes Compétences"
   },
 
   "MENU_ITEMS": {
@@ -16,23 +16,47 @@
   },
 
   "CV": {
-    "HEADER": "Télécharger le CV Complet",
-    "BODY": "Pour votre commodité, vous pouvez télécharger une copie PDF complète de mon CV pour une impression et une consultation faciles.",
-    "DOWNLOAD_CV": "Télécharger le CV",
+    "TITLE": "Vous voulez les détails complets ?",
+    "HEADER": "Téléchargez mon CV complet ci-dessous pour en savoir plus.",
+    "BODY": "Pour votre commodité, vous pouvez télécharger une copie complète au format PDF de mon CV pour une impression et une consultation faciles.",
+    "DOWNLOAD_CV": "TÉLÉCHARGER LE CV",
     "MODAL": {
-      "HEADER": "Sélectionnez la Langue de Votre CV",
+      "HEADER": "Sélectionnez la langue de votre CV",
       "TABLE_HEADING": "Veuillez choisir votre langue préférée ci-dessous pour télécharger le fichier CV.",
-      "LANGUAGE": "Langue"
+      "LANGUAGE": "Langue disponible"
+    }
+  },
+
+  "CHARTS": {
+    "CORE_PERSONAL_QUALITIES": {
+      "TITLE": "Qualités Personnelles Clés",
+      "MOTIVATION": "Motivation",
+      "TRUSTWORTHINESS": "Fiabilité",
+      "RESPECTFULNESS": "Respect",
+      "CONFIDENCE": "Confiance",
+      "OPENNESS": "Ouverture",
+      "ADAPTABILITY": "Adaptabilité",
+      "SELF_AWARENESS": "Conscience de soi"
+    },
+    "CORE_PROFESSIONAL_COMPETENCIES": {
+      "TITLE": "Compétences Professionnelles Clés",
+      "CONFLICT_RESOLUTION": "Résolution des Conflits",
+      "TEAM_ORIENTATION": "Orientation Équipe",
+      "LEADERSHIP": "Leadership",
+      "MENTORSHIP": "Mentorat",
+      "NETWORKING": "Réseautage",
+      "HUMILITY": "Humilité",
+      "DECISION_MAKING": "Prise de Décisions"
     }
   },
 
   "GOAL_SECTION": {
-    "STARTED_CODING": "Début de la Programmation au Lycée",
-    "STARTED_COLLEGE": "Entré à l'Université pour Développer des Compétences en Informatique",
-    "STARTED_COMPRSA": "Début de la Carrière en Développement Professionnel",
-    "PROJECT_FOR_THE_YEAR": "A Reçu le Prix 'Projet de l’Année'",
-    "STARTED_CODE_REVIEW": "Commencé à Assumer des Responsabilités de Revue de Code Backend",
-    "STARTED_REVIEWING_MERGING": "A Assumé la Responsabilité du Merge et du Déploiement du Code",
-    "BECAME_INTERMIDIAT_DEV": "Promu au Poste de Développeur Intermédiaire"
+    "STARTED_CODING": "A commencé la programmation au lycée",
+    "STARTED_COLLEGE": "Entré à l'université pour approfondir les compétences en informatique",
+    "STARTED_COMPRSA": "A commencé la carrière de développement professionnel",
+    "PROJECT_FOR_THE_YEAR": "Récompensé par le prix 'Projet de l'année'",
+    "STARTED_CODE_REVIEW": "A commencé les responsabilités de révision du code backend",
+    "STARTED_REVIEWING_MERGING": "A assumé la responsabilité de la fusion et du déploiement du code",
+    "BECAME_INTERMIDIAT_DEV": "Avancé vers un rôle de développeur intermédiaire"
   }
 }

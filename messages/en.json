@@ -25,6 +25,29 @@
       "LANGUAGE": "Available Language"
     }
   },
+
+  "CHARTS": {
+    "CORE_PERSONAL_QUALITIES": {
+      "TITLE": "Core Personal Qualities",
+      "MOTIVATION": "Motivation",
+      "TRUSTWORTHINESS": "Trustworthiness",
+      "RESPECTFULNESS": "Respectfulness",
+      "CONFIDENCE": "Confidence",
+      "OPENNESS": "Openness",
+      "ADAPTABILITY": "Adaptability",
+      "SELF_AWARENESS": "Self-Awareness"
+    },
+    "CORE_PROFESSIONAL_COMPETENCIES": {
+      "TITLE": "Core Professional Competencies",
+      "CONFLICT_RESOLUTION": "Conflict Resolution",
+      "TEAM_ORIENTATION": "Team Orientation",
+      "LEADERSHIP": "Leadership",
+      "MENTORSHIP": "Mentorship",
+      "NETWORKING": "Networking",
+      "HUMILITY": "Humility",
+      "DECISION_MAKING": "Decision-Making"
+    }
+  },
   "GOAL_SECTION": {
     "STARTED_CODING": "Began Programming in High School",
     "STARTED_COLLEGE": "Entered College to Advance Skills in Computer Science",
