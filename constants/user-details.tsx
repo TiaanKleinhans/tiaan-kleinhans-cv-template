@@ -6,5 +6,4 @@ export const UserDetailsConstant = {
   ADDRESS: '28 Norfolk Street Sherwood',
   LINKED_IN: 'https://www.linkedin.com/in/tiaan-kleinhans-3b60ab191/',
   GIT_HUB: 'https://github.com/TiaanKleinhans?tab=repositories',
-  HOBBIES: ['Small Projects', 'Motor Racing', 'Golf', 'Fishing/Hunting'],
 } as const;
