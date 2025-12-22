@@ -11,7 +11,12 @@ const toArray = (value: ClassValue): Array<string | number> => {
       .map(([key]) => key);
   }
 
-  return value ? [value] : [];
+  // Only return string or number values, filter out booleans
+  if (typeof value === 'string' || typeof value === 'number') {
+    return [value];
+  }
+
+  return [];
 };
 
 export function cn(...inputs: ClassValue[]): string {

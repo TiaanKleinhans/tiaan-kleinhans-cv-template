@@ -1,5 +1,5 @@
 import * as Icons from 'lucide-react';
-import { LucideIcon } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
 /**
  * Maps icon name string to LucideIcon component
@@ -9,9 +9,9 @@ import { LucideIcon } from 'lucide-react';
 export function getIconByName(iconName: string): LucideIcon {
   // Convert icon name to match lucide-react export names
   // Handle special cases like 'FileCode' -> 'FileCode', 'GitBranch' -> 'GitBranch'
-  const IconComponent = (Icons as Record<string, LucideIcon>)[iconName];
+  const IconComponent = (Icons as unknown as Record<string, LucideIcon>)[iconName];
   
   // Return the icon or a default icon if not found
-  return IconComponent || Icons.Circle;
+  return IconComponent || (Icons.Circle as LucideIcon);
 }
 

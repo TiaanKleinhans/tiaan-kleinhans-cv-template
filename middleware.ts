@@ -19,12 +19,12 @@ export const config = {
 if (process.env.NODE_ENV === 'development') {
   const matcherLocales = config.matcher[1]?.match(/\(([^)]+)\)/)?.[1]?.split('|') || [];
   const expectedLocales = LocaleCodes;
-  const matcherSet = new Set(matcherLocales);
-  const expectedSet = new Set(expectedLocales);
+  const matcherSet = new Set<string>(matcherLocales);
+  const expectedSet = new Set<string>(expectedLocales);
   
   if (matcherLocales.length !== expectedLocales.length || 
-      !matcherLocales.every(loc => expectedSet.has(loc)) ||
-      !expectedLocales.every(loc => matcherSet.has(loc))) {
+      !matcherLocales.every((loc: string) => expectedSet.has(loc)) ||
+      !expectedLocales.every((loc: string) => matcherSet.has(loc))) {
     console.warn(
       '⚠️  WARNING: Middleware matcher does not match AvailableTranslations!\n' +
       `   Matcher has: ${matcherLocales.join(', ')}\n` +
