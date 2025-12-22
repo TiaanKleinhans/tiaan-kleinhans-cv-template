@@ -1,4 +1,4 @@
-type ClassValue = string | number | null | undefined | false | ClassValue[] | { [key: string]: ClassValue };
+type ClassValue = string | number | null | undefined | boolean | ClassValue[] | { [key: string]: boolean | ClassValue };
 
 const toArray = (value: ClassValue): Array<string | number> => {
   if (Array.isArray(value)) {
