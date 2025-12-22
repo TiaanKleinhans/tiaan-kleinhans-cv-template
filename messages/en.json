@@ -1,4 +1,9 @@
 {
+  "ERROR": {
+    "SOMETHING_WENT_WRONG": "Something went wrong.",
+    "USER_NOT_FOUND": "Sorry for the inconvenience. Please feel free to let us know about this bug at ."
+  },
+
   "GENERIC": {
     "CANCEL": "Cancel"
   },
@@ -56,5 +61,205 @@
     "STARTED_CODE_REVIEW": "Began Backend Code Review Responsibilities",
     "STARTED_REVIEWING_MERGING": "Assumed Responsibility for Code Merging and Deployment",
     "BECAME_INTERMIDIAT_DEV": "Advanced to an Intermediate Developer Role"
+  },
+  "MOUNTAIN_SECTION": {
+    "HEADER": "The Climb",
+    "QUOTE": "With every step up the mountain, we level up and learn"
+  },
+  "ACCOMPLISHMENTS": {
+    "JUNIOR_SOFTWARE_DEVELOPER": {
+      "TITLE": "Joined as a Junior Software Developer — May 2022",
+      "DESCRIPTION": "Started my professional career working on a production Angular and .NET application within a collaborative engineering team."
+    },
+    "TOTY_2023": {
+      "TITLE": "Received Team of the Year — Dec 2023",
+      "DESCRIPTION": "Awarded Team of the Year out of more than 10+ teams company-wide for strong delivery, collaboration, and impact."
+    },
+    "APPOINTMENT_SCHEDULING_SYSTEM": {
+      "TITLE": "Complex Appointment Scheduling System — Feb 2024",
+      "DESCRIPTION": "Designed and implemented a complex appointment scheduling feature including timezone handling, appointment splicing, recurring logic, and single-occurrence overrides across frontend and backend."
+    },
+    "PR_REVIEW_RESPONSIBILITY": {
+      "TITLE": "Pull Request Review Responsibility — Apr 2024",
+      "DESCRIPTION": "Trusted with reviewing and approving pull requests, ensuring code quality, maintainability, and adherence to team standards."
+    },
+    "TRANSITIONED_TO_INTERMEDIATE": {
+      "TITLE": "Transitioned to Intermediate Software Developer — June 2024",
+      "DESCRIPTION": "Progressed from junior to intermediate role based on increased ownership, technical ability, and consistent delivery of production-ready features."
+    },
+    "MERGE_RIGHTS": {
+      "TITLE": "Merge Rights Granted (Dev & Alpha) — Oct 2024",
+      "DESCRIPTION": "Granted merge permissions to Dev and Alpha environments after demonstrating reliability, strong code quality, and understanding of release workflows."
+    },
+    "TOTY_RUNNER_UP_2024": {
+      "TITLE": "Team of the Year Runner-Up — Dec 2024",
+      "DESCRIPTION": "Recognised for consistent contribution, delivery quality, and ongoing impact across the product."
+    },
+    "TOTY_2025": {
+      "TITLE": "Received Team of the Year — 2025",
+      "DESCRIPTION": "Awarded Team of the Year out of more than 10+ teams company-wide for strong delivery, collaboration, and impact."
+    },
+    "FIRST_PRODUCTION_DEPLOYMENT": {
+      "TITLE": "First Production Deployment — Dec 2025",
+      "DESCRIPTION": "Successfully delivered my first solo live production release, taking full ownership of the deployment process and post-release stability."
+    }
+  },
+  "SKILL_CATEGORY": {
+    "PROGRAMMING_LANGUAGES": "Programming Languages",
+    "FRAMEWORKS_LIBRARIES": "Frameworks & Libraries",
+    "SOURCE_CONTROL": "Source Control",
+    "CLOUD_DEVOPS": "Cloud & DevOps",
+    "TOOLS_PLATFORMS": "Tools & Platforms",
+    "ARCHITECTURE_PRACTICES": "Architecture & Practices"
+  },
+  "SKILLS": {
+    "TYPESCRIPT": {
+      "TITLE": "TypeScript",
+      "DESCRIPTION": "Used daily to build scalable, strongly-typed applications with clean architecture and maintainable code."
+    },
+    "JAVASCRIPT": {
+      "TITLE": "JavaScript",
+      "DESCRIPTION": "Core language used to build interactive, responsive web applications with dynamic client-side logic."
+    },
+    "CSHARP": {
+      "TITLE": "C#",
+      "DESCRIPTION": "Extensive experience developing scalable APIs, background services, and clean domain logic."
+    },
+    "HTML": {
+      "TITLE": "HTML",
+      "DESCRIPTION": "Used to build well-structured, maintainable page layouts that form the foundation of modern web applications."
+    },
+    "CSS_SCSS": {
+      "TITLE": "CSS / SCSS",
+      "DESCRIPTION": "Strong experience building responsive designs using structured, scalable SCSS architecture."
+    },
+    "SQL": {
+      "TITLE": "SQL",
+      "DESCRIPTION": "Efficient querying and data modelling."
+    },
+    "ANGULAR": {
+      "TITLE": "Angular",
+      "DESCRIPTION": "Developed complex, production-ready applications with reusable components and clean state management."
+    },
+    "NET_ASPNET": {
+      "TITLE": ".NET / ASP.NET Core",
+      "DESCRIPTION": "Built secure, high-performance backend services with clean architecture and business logic."
+    },
+    "RXJS": {
+      "TITLE": "RxJS",
+      "DESCRIPTION": "Strong experience handling complex async flows using observables and operators."
+    },
+    "FULLCALENDAR": {
+      "TITLE": "FullCalendar",
+      "DESCRIPTION": "Built complex appointment scheduling with custom date logic, event manipulation, and external integrations."
+    },
+    "AZURE_AD_B2C": {
+      "TITLE": "Azure AD B2C",
+      "DESCRIPTION": "Implemented secure, scalable user authentication using Azure AD B2C, handling sign-up, sign-in, and identity flows for modern applications."
+    },
+    "ANGULAR_SIGNALS": {
+      "TITLE": "Angular Signals",
+      "DESCRIPTION": "Used Angular Signals for reactive state management and efficient UI updates."
+    },
+    "NEXTJS": {
+      "TITLE": "Next.js",
+      "DESCRIPTION": "Developed and maintained personal projects with Next.js, including this website, to explore modern full-stack workflows."
+    },
+    "TAILWIND": {
+      "TITLE": "Tailwind CSS",
+      "DESCRIPTION": "Built responsive and consistent UI layouts using Tailwind CSS utility-first styling."
+    },
+    "SUPABASE": {
+      "TITLE": "Supabase",
+      "DESCRIPTION": "Exploring Supabase for personal projects to manage authentication, databases, and real-time data."
+    },
+    "FIREBASE": {
+      "TITLE": "Firebase",
+      "DESCRIPTION": "Utilized Firebase for real-time databases, authentication, and cloud storage in production applications."
+    },
+    "GIT": {
+      "TITLE": "Git",
+      "DESCRIPTION": "Actively work with Git for efficient version control, managing complex branching and collaboration within development teams."
+    },
+    "GITHUB": {
+      "TITLE": "GitHub",
+      "DESCRIPTION": "Worked with GitHub for efficient version control, managing complex branching and collaboration within development teams."
+    },
+    "AZURE_DEVOPS": {
+      "TITLE": "Azure DevOps",
+      "DESCRIPTION": "Actively work with Azure DevOps for efficient version control, managing complex branching and collaboration within development teams."
+    },
+    "AZURE": {
+      "TITLE": "Microsoft Azure",
+      "DESCRIPTION": "Regularly deploy and manage cloud applications on Azure, utilizing services like Azure App Services, Azure Functions, and Azure DevOps for efficient workflows."
+    },
+    "AZURE_APP_SERVICES": {
+      "TITLE": "Azure App Services",
+      "DESCRIPTION": "Leverage Azure App Services to deploy, scale, and manage web applications, integrating with other Azure services for seamless cloud-based solutions."
+    },
+    "VERCEL": {
+      "TITLE": "Vercel",
+      "DESCRIPTION": "Leveraged Vercel for deploying and scaling personal projects, utilizing serverless functions and automatic performance optimization."
+    },
+    "NODEJS": {
+      "TITLE": "Node.js",
+      "DESCRIPTION": "Leverage Node.js to develop backend services, RESTful APIs, and real-time applications with a focus on performance and scalability."
+    },
+    "NPM": {
+      "TITLE": "npm",
+      "DESCRIPTION": "Use npm for managing dependencies, running scripts, and handling package installation in JavaScript-based projects."
+    },
+    "VSCODE": {
+      "TITLE": "Visual Studio Code",
+      "DESCRIPTION": "Leverage VS Code for efficient coding, debugging, and version control integration, customizing the environment with extensions for optimized workflows."
+    },
+    "VISUAL_STUDIO": {
+      "TITLE": "Visual Studio",
+      "DESCRIPTION": "Leverage Visual Studio for developing enterprise-grade applications, with support for debugging, unit testing, and efficient project management in a professional environment."
+    },
+    "REST_APIS": {
+      "TITLE": "REST APIs",
+      "DESCRIPTION": "Architect and implement RESTful APIs, ensuring efficient data exchange, scalability, and secure integrations in enterprise-level applications."
+    },
+    "JWT_OAUTH": {
+      "TITLE": "JWT / OAuth",
+      "DESCRIPTION": "Leverage JWT for token-based authentication and OAuth for secure authorization, ensuring safe access control in modern web applications."
+    },
+    "SQL_DATABASES": {
+      "TITLE": "SQL Databases",
+      "DESCRIPTION": "Leverage SQL databases for designing, optimizing, and maintaining relational data models, ensuring data integrity and efficient query performance in production environments."
+    },
+    "FULL_STACK": {
+      "TITLE": "Full-Stack Development",
+      "DESCRIPTION": "Build and maintain scalable full-stack applications, integrating front-end frameworks with back-end services to create seamless user experiences."
+    },
+    "COMPONENT_ARCHITECTURE": {
+      "TITLE": "Component-Based Architecture",
+      "DESCRIPTION": "Architect scalable applications using component-based design, focusing on modular, reusable components to improve maintainability and accelerate development."
+    },
+    "REUSABLE_COMPONENTS": {
+      "TITLE": "Reusable Component Design",
+      "DESCRIPTION": "Regularly create and optimize reusable components, enhancing code reusability, reducing development time, and ensuring consistent UI/UX across projects."
+    },
+    "FRONTEND_BACKEND_SEP": {
+      "TITLE": "Frontend-Backend Separation",
+      "DESCRIPTION": "Architect and implement applications with a clear separation between frontend and backend to enhance scalability, maintainability, and independent deployment."
+    },
+    "RESTFUL_API_DESIGN": {
+      "TITLE": "RESTful API Design",
+      "DESCRIPTION": "Architect and implement robust RESTful APIs, focusing on scalable endpoint design, efficient resource management, and secure, high-performance communication across services."
+    },
+    "AUTH_FLOWS": {
+      "TITLE": "Authentication & Authorization",
+      "DESCRIPTION": "Architect and implement secure authentication and authorization strategies, including OAuth, JWT, and role-based access, to ensure data privacy and secure access to resources."
+    }
+  },
+  "ANALYTICS": {
+    "TOTAL_VISITORS": "Total Visitors",
+    "CHART_TITLE": "Views by Section",
+    "HERO": "Viewed Hero",
+    "CV": "Viewed CV",
+    "SKILLS": "Viewed Skills",
+    "ACHIEVEMENTS": "Viewed Achievements"
   }
 }

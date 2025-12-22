@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 import Image from 'next/image';
-import { UserDetailsConstant } from '@/constants/user-details';
+import { CurrentUser } from '@/constants/current-user';
 import {
   Dialog,
   DialogContent,
@@ -26,16 +26,36 @@ import { ChartCard } from '@/components/ui/chart-card';
 import { ReusableRadarChart } from '@/components/ui/radar-chart';
 import { motion } from 'framer-motion';
 import { ScrollAnimation } from '@/components/ui/scroll-animation';
+import { SkillsSection } from '@/components/skills-section';
+import { AccomplishmentsTimeline } from '@/components/accomplishments-timeline';
+import { AnalyticsSection } from '@/components/analytics-section';
 import {
   CorePersonalQualitiesConstant,
   CoreProfessionalCompetenciesConstant,
 } from '@/constants/chart-data';
+import { useEffect, useState } from 'react';
+import { LoadingScreen } from '@/components/ui/loading-screen';
+import { useSectionTracking } from '@/hooks/use-section-tracking';
 // import { TRANSLATION_KEYS } from '@/constants/translations';
+
+type User = {
+  id: string;
+  name: string;
+  surname: string;
+  phoneNumber?: string;
+  email?: string;
+  address?: string;
+  linkedIn?: string;
+  gitHub?: string;
+};
 
 export default function HomePage() {
   const translate = useTranslations();
-  const user = UserDetailsConstant;
+  const userId = CurrentUser;
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
   const availableTranslations = AvailableTranslations;
+
   const personalQualitiesConstant = CorePersonalQualitiesConstant.map((_) => ({
     key: translate(_.key),
     value: _.value,
@@ -46,22 +66,83 @@ export default function HomePage() {
     value: _.value,
   }));
 
-  return (
-    <div className="w-full">
-      {/* ================= HERO SECTION ================= */}
+  // Section tracking - must be called before any conditional returns
+  useSectionTracking({
+    sections: {
+      hero: 'hero-section',
+      cv: 'cv-section',
+      skills: 'skills-section',
+      mountain: 'mountain-section',
+    },
+  });
 
-      <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
+  useEffect(() => {
+    async function fetchUser() {
+      try {
+        const response = await fetch(`/api/users/${userId}`);
+
+        if (!response.ok) {
+          let errorData;
+          try {
+            errorData = await response.json();
+          } catch {
+            errorData = { error: `HTTP ${response.status}: ${response.statusText}` };
+          }
+          console.error('API Error Response:', errorData);
+          throw new Error(
+            errorData.error || `Failed to fetch user: ${response.status} ${response.statusText}`
+          );
+        }
+
+        const data = await response.json();
+        setUser(data.user);
+      } catch (error) {
+        console.error('Error fetching user:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (userId) {
+      fetchUser();
+    } else {
+      setLoading(false);
+    }
+  }, [userId]);
+
+  // Show loading screen while fetching user data
+  if (loading) {
+    return <LoadingScreen />;
+  }
+
+  // Show error state if user is not found
+  if (!user) {
+    return (
+      <div className="w-full h-screen flex items-center justify-center bg-[var(--primary)]">
+        <div className="text-white text-center">
+          <h1 className="text-2xl font-bold mb-4"> {translate('ERROR.SOMETHING_WENT_WRONG')}</h1>
+          <p>{translate('ERROR.USER_NOT_FOUND')} Kleinhanstiaan89@gmail.com</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full bg-black">
+      {/* ================= HERO SECTION ================= */}
+      <section
+        id="hero-section"
+        className="relative w-full h-screen overflow-hidden flex items-center justify-center"
+      >
         <Image
           src="/images/intro-me.png"
           alt="Top background"
           fill
-          className="
-      opacity-95
-      object-cover
-      [mask-image:linear-gradient(to_bottom,black_80%,transparent)]
-      bg-[var(--primary)]
-    "
+          className="opacity-90 object-cover [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
         />
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center z-[5]">
+          <div className="w-full h-40 md:h-50 bg-black/30 backdrop-blur-[2px]"></div>
+        </div>
 
         {/* TEXT IN HERO */}
         <div className="relative z-10 flex flex-col items-center text-center text-white">
@@ -75,114 +156,130 @@ export default function HomePage() {
           </ScrollAnimation>
         </div>
       </section>
+      {/* ================= HERO SECTION ================= */}
+      {/* CV DOWNLOAD SECTION - Gradient transition from hero to fibre optic */}
+      <section
+        id="cv-section"
+        className="pb-0 md:pb-0 lg:pb-0 relative w-full   from-[#1a1a1a] via-black to-black"
+      >
+        <ScrollAnimation>
+          <div className="relative w-full flex justify-center z-20 [mask-image:linear-gradient(to_top,black_0 %,transparent)]">
+            <div className="w-[90%] md:w-[55%] bg-[var(--primary)] p-12 rounded-lg shadow-2xl text-white text-center">
+              <h2 className="opacity-90 mb-6">{translate('CV.TITLE')}</h2>
+              <h2 className="opacity-90 mb-6">{translate('CV.HEADER')}</h2>
 
-      {/* FLOATING CARD FIXED + PREDICTABLE */}
-
-      {/* <motion.div
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-      > */}
-
-      <ScrollAnimation>
-        <div className="relative w-full flex justify-center -mt-24 z-20">
-          <div className="w-[90%] md:w-[55%] bg-[var(--primary)] p-12 rounded-lg shadow-2xl text-white text-center">
-            <h2 className="opacity-90 mb-6">{translate('CV.TITLE')}</h2>
-            <h2 className="opacity-90 mb-6">{translate('CV.HEADER')}</h2>
-
-            <Dialog>
-              <ScrollAnimation animateOnce={false}>
-                <DialogTrigger className="border border-green-400 px-6 py-2 rounded text-green-400 hover:bg-green-400 hover:text-black transition">
-                  {translate('CV.DOWNLOAD_CV')}
-                </DialogTrigger>
-              </ScrollAnimation>
-
-              <DialogContent className="!bg-[var(--primary)] !text-white">
-                {/* <DialogContent className="!bg-[#233143] !text-white"> */}
-                <ScrollAnimation delay={0.2}>
-                  <DialogHeader>
-                    <DialogTitle className="flex items-center justify-center">
-                      {translate('CV.MODAL.HEADER')}
-                    </DialogTitle>
-                  </DialogHeader>
+              <Dialog>
+                <ScrollAnimation animateOnce={false}>
+                  <DialogTrigger className="border border-green-400 px-6 py-2 rounded text-green-400 hover:bg-green-400 hover:text-black transition">
+                    {translate('CV.DOWNLOAD_CV')}
+                  </DialogTrigger>
                 </ScrollAnimation>
 
-                <ScrollAnimation delay={0.4}>
-                  <Table>
-                    <TableHeader>
-                      <TableRow className="pt-2 pb-0 flex items-center justify-center">
-                        <TableHead className="!text-white">
-                          {translate('CV.MODAL.LANGUAGE')}
-                        </TableHead>
-                      </TableRow>
-                    </TableHeader>
+                <DialogContent className="!bg-[var(--primary)] !text-white">
+                  <ScrollAnimation delay={0.2}>
+                    <DialogHeader>
+                      <DialogTitle className="flex items-center justify-center">
+                        {translate('CV.MODAL.HEADER')}
+                      </DialogTitle>
+                    </DialogHeader>
+                  </ScrollAnimation>
 
-                    <TableBody>
-                      {availableTranslations.map((_, index) => (
-                        <TableRow
-                          key={_.code}
-                          className="border-b border-gray-300 hover:bg-gray-900 cursor-pointer"
-                        >
-                          <TableCell className="flex items-center justify-center font-medium">
-                            <a href={`files/${_.code}.zip`} download>
-                              {_.name}
-                            </a>
-                          </TableCell>
+                  <ScrollAnimation delay={0.4}>
+                    <Table>
+                      <TableHeader>
+                        <TableRow className="pt-2 pb-0 flex items-center justify-center">
+                          <TableHead className="!text-white">
+                            {translate('CV.MODAL.LANGUAGE')}
+                          </TableHead>
                         </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </ScrollAnimation>
-              </DialogContent>
-            </Dialog>
+                      </TableHeader>
+
+                      <TableBody>
+                        {availableTranslations.map((_, index) => (
+                          <TableRow
+                            key={_.code}
+                            className="border-b border-gray-300 hover:bg-gray-900 cursor-pointer"
+                          >
+                            <TableCell className="flex items-center justify-center font-medium">
+                              <a href={`files/${_.code}.zip`} download>
+                                {_.name}
+                              </a>
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </ScrollAnimation>
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
-        </div>
-      </ScrollAnimation>
-      {/* </motion.div> */}
+        </ScrollAnimation>
+      </section>
 
-      {/* FLOATING CARD  */}
+      {/* CV DOWNLOAD SECTION - Gradient transition from hero to fibre optic */}
 
-      <section className="relative w-full h-screen overflow-hidden">
+      <section className="relative w-full py-10 overflow-hidden">
+        <Image
+          src="/images/fibre-optic.jpg"
+          alt="Top background"
+          fill
+          className="opacity-100 object-cover [mask-image:linear-gradient(to_top,black_80%,transparent)]"
+        />
+        <ScrollAnimation animateOnce={false}>
+          <div className="relative z-20 flex flex-wrap justify-center gap-4 sm:gap-4">
+            <ChartCard
+              title={translate('CHARTS.CORE_PROFESSIONAL_COMPETENCIES.TITLE')}
+              className="w-[80%] sm:w-[48%] lg:w-[42%]"
+            >
+              <ReusableRadarChart
+                data={professionalCompetencies}
+                angleKey="key"
+                dataKey="value"
+                radiusDomain={[0, 10]}
+                strokeColor="var(--white)"
+                fillColor="var(--white)"
+              />
+            </ChartCard>
+
+            <ChartCard
+              title={translate('CHARTS.CORE_PERSONAL_QUALITIES.TITLE')}
+              className="w-[80%] sm:w-[48%] lg:w-[42%]"
+            >
+              <ReusableRadarChart
+                data={personalQualitiesConstant}
+                angleKey="key"
+                dataKey="value"
+                radiusDomain={[0, 10]}
+                strokeColor="var(--white)"
+                fillColor="var(--white)"
+              />
+            </ChartCard>
+          </div>
+        </ScrollAnimation>
+      </section>
+
+      {/* SKILLS SECTION */}
+      <section id="skills-section" className="relative w-full bg-black py-16">
+        {/* <ScrollAnimation animateOnce={false}> */}
+        <SkillsSection />
+        {/* </ScrollAnimation> */}
+      </section>
+
+      {/* FIBRE OPTIC SECTION - COMMENTED OUT */}
+
+      {/* <section className="relative w-full min-h-screen overflow-hidden bg-black">
         <Image
           src="/images/fibre-optic.jpg"
           alt="Bottom background"
           fill
-          className="
-    object-cover
+          className="object-cover
+             object-cover
     [mask-image:linear-gradient(to_top,black_80%,transparent)]
-   
-  "
+          "
         />
 
-        {/* Chart Cards */}
-        {/* <div className="relative gap-4 z-20 mt-10 flex flex-wrap justify-center">
-          <ChartCard title="TRANSLATION Please" className="w-[90%] md:w-1/2 lg:w-1/2">
-            <ReusableRadarChart
-              data={data}
-              angleKey="work"
-              dataKey="workValue"
-              radiusDomain={[0, 10]}
-              strokeColor="#82a6aa"
-              fillColor="#82a6aa"
-            />
-          </ChartCard>
-
-          <ChartCard title="TRANSLATION Please" className="w-[90%] md:w-1/2 lg:w-1/2">
-            <ReusableRadarChart
-              data={data}
-              angleKey="personality"
-              dataKey="personalityValue"
-              radiusDomain={[0, 10]}
-              strokeColor="#82a6aa"
-              fillColor="#82a6aa"
-            />
-          </ChartCard>
-
-          <ChartCard title="Another Card" className="w-full md:w-1/2 lg:w-1/3">
-            <div>Chart here</div>
-          </ChartCard>
-        </div> */}
+        
 
         <ScrollAnimation animateOnce={false}>
           <div className="relative z-20 mt-10 flex flex-wrap justify-center gap-4 sm:gap-4">
@@ -216,14 +313,38 @@ export default function HomePage() {
           </div>
         </ScrollAnimation>
 
-        {/* Chart Cards */}
+
+        <SkillsSection />
+      </section> */}
+
+      {/* Mountain Section */}
+      <section id="mountain-section" className="relative w-full h-screen overflow-hidden">
+        <Image
+          src="/images/progress-mountain.jpg"
+          alt="Bottom background"
+          fill
+          className="
+    object-cover
+    [mask-image:linear-gradient(to_top,black_80%,transparent)]
+   
+  "
+        />
+        {/* Header and Quote */}
+        <div className="absolute top-0 left-0 right-0 z-20 flex flex-col items-center justify-center pt-4 md:pt-6 px-4">
+          <ScrollAnimation>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-[2px_2px_4px_rgba(0,0,0,0.8)] text-center">
+              {translate('MOUNTAIN_SECTION.HEADER')}
+            </h2>
+            <p className="mt-4 text-lg md:text-xl text-white opacity-90 italic text-center drop-shadow-[1px_1px_2px_rgba(0,0,0,0.8)]">
+              {translate('MOUNTAIN_SECTION.QUOTE')}
+            </p>
+          </ScrollAnimation>
+        </div>
+        <AccomplishmentsTimeline />
       </section>
+
+      {/* Analytics Section */}
+      <AnalyticsSection />
     </div>
   );
-
-  <section className="w-full bg-[var(--primary)] py-24">
-    <div className="max-w-6xl mx-auto px-6">
-      <h2 className="text-white text-3xl font-bold mb-10 text-center">02 PROFESSIONAL METRICS</h2>
-    </div>
-  </section>;
 }
