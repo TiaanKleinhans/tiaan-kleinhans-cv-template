@@ -1,13 +1,14 @@
 import { createAdminClient } from '@/lib/supabase-server';
 import { NextResponse } from 'next/server';
 
-export async function GET(request: Request, { params }: { params: Promise<{ uuid: string }> }) {
+export async function GET() {
   try {
-    const { uuid } = await params;
-
     const supabase = createAdminClient();
 
-    const { data: user, error } = await supabase.from('users').select('*').eq('id', uuid).single();
+    const { data: translations, error } = await supabase
+      .from('available_translations')
+      .select('id, code, display_name, sort_order, total_downloads')
+      .order('sort_order', { ascending: true });
 
     if (error) {
       console.error('API Route - Supabase error:', {
@@ -22,15 +23,20 @@ export async function GET(request: Request, { params }: { params: Promise<{ uuid
           code: error.code,
           details: error.details,
         },
-        { status: error.code === 'PGRST116' ? 404 : 500 }
+        { status: 500 }
       );
     }
 
-    if (!user) {
-      return NextResponse.json({ error: 'User not found' }, { status: 404 });
-    }
+    const formattedTranslations =
+      translations?.map((translation) => ({
+        id: translation.id,
+        code: translation.code,
+        name: translation.display_name,
+        sortOrder: translation.sort_order,
+        totalDownloads: translation.total_downloads || 0,
+      })) || [];
 
-    return NextResponse.json({ user });
+    return NextResponse.json({ translations: formattedTranslations });
   } catch (error) {
     return NextResponse.json(
       {

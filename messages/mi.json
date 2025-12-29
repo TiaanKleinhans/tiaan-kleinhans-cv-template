@@ -1,0 +1,283 @@
+{
+  "ERROR": {
+    "SOMETHING_WENT_WRONG": "I raru tētahi mea.",
+    "USER_NOT_FOUND": "Aroha mai mō te raruraru. Tena koa whakaaturia mai tēnei mea angamaheni ki ."
+  },
+
+  "GENERIC": {
+    "CANCEL": "Whakakore"
+  },
+
+  "INTRODUCTION": {
+    "ROLE": "Kaiwhakawhanake Pūmanawa Takawaenga",
+    "DISCOVER_MY_SKILL": "Whakakitea aku Pūkenga"
+  },
+
+  "MENU_ITEMS": {
+    "HOME": "Kāinga",
+    "EXPERIENCE": "Wheako",
+    "DOWNLOAD_RESUME": "Tikiake Tāpui",
+    "CONTACT": "Whakapā mai"
+  },
+
+  "CV": {
+    "TITLE": "Kei te hiahia koe ki ngā kōrero katoa?",
+    "HEADER": "Tikiake i taku kōrero whakapapa katoa i raro iho nei kia mōhio ai koe.",
+    "BODY": "Hei āwhina i a koe, ka taea e koe te tikiake i tētahi kape PDF o taku CV hei pānui, hei tā rānei.",
+    "DOWNLOAD_CV": "TIKIAKE TĀPUI",
+    "MODAL": {
+      "HEADER": "Kōwhiria te Reo mo te CV",
+      "TABLE_HEADING": "Tēnā, kōwhiria tō reo pai i raro iho nei hei tikiake i te kōnae CV.",
+      "LANGUAGE": "Ngā Reo e Wātea ana"
+    }
+  },
+
+  "CHARTS": {
+    "CORE_PERSONAL_QUALITIES": {
+      "TITLE": "Ngā Pūmanawa Whaiaro",
+      "MOTIVATION": "Ngākau Hihiko",
+      "TRUSTWORTHINESS": "Pono",
+      "RESPECTFULNESS": "Whakaute",
+      "CONFIDENCE": "Māia",
+      "OPENNESS": "Māhorahora",
+      "ADAPTABILITY": "Urutau",
+      "SELF_AWARENESS": "Mōhio ki a koe anō"
+    },
+    "CORE_PROFESSIONAL_COMPETENCIES": {
+      "TITLE": "Ngā Pūkenga Ngaio",
+      "CONFLICT_RESOLUTION": "Whakatau tautohetohe",
+      "TEAM_ORIENTATION": "Mahi Tīma",
+      "LEADERSHIP": "Rangatiratanga",
+      "MENTORSHIP": "Kaiārahi",
+      "NETWORKING": "Tūhono hononga",
+      "HUMILITY": "Whakaiti",
+      "DECISION_MAKING": "Whakatau kaupapa"
+    }
+  },
+
+  "GOAL_SECTION": {
+    "STARTED_CODING": "I tīmata te tohutohu rorohiko i te kura tuarua",
+    "STARTED_COLLEGE": "I uru ki te Whare Wānanga mō te Pūtaiao Rorohiko",
+    "STARTED_COMPRSA": "I tīmata te mahi ngaio hei Kaiwhakawhanake",
+    "PROJECT_FOR_THE_YEAR": "I whakawhiwhia ki te tohu 'Projekiti o te Tau'",
+    "STARTED_CODE_REVIEW": "I tīmata te kawenga mō te arotake waehere Backend",
+    "STARTED_REVIEWING_MERGING": "I mau ki te kawenga mō te whakakotahi waehere me te tuku",
+    "BECAME_INTERMIDIAT_DEV": "I piki ki te tūranga Kaiwhakawhanake Takawaenga"
+  },
+
+  "MOUNTAIN_SECTION": {
+    "HEADER": "Te Pikinga",
+    "QUOTE": "Ma ia pikinga i te maunga, ka kake te matatau me te ako"
+  },
+
+  "ACCOMPLISHMENTS": {
+    "JUNIOR_SOFTWARE_DEVELOPER": {
+      "TITLE": "I uru atu hei Kaiwhakawhanake Pūmanawa Nohinohi — Mei 2022",
+      "DESCRIPTION": "I tīmata taku mahi ngaio ki te mahi i tētahi tono Angular me te .NET i roto i tētahi tīma pūkaha."
+    },
+    "TOTY_2023": {
+      "TITLE": "I whakawhiwhia ki te tohu Tīma o te Tau — Tihe 2023",
+      "DESCRIPTION": "I whakawhiwhia ki te tohu Tīma o te Tau i roto i te 10+ tīma mō te tuku mahi kaha me te mahi tahi."
+    },
+    "APPOINTMENT_SCHEDULING_SYSTEM": {
+      "TITLE": "Pūnaha Whakarite Wā Whatini — Pēpu 2024",
+      "DESCRIPTION": "I hoahoa, i whakatinana i tētahi āhuatanga whakarite wā whakatini tae atu ki te rerekētanga o te wā me te arorau huringa."
+    },
+    "PR_REVIEW_RESPONSIBILITY": {
+      "TITLE": "Kawenga Arotake Tono Tūhono (PR) — Pae 2024",
+      "DESCRIPTION": "I whakapono te tīma ki ahau ki te arotake me te whakaae i ngā tono tūhono (PR), e tiaki ana i te kounga o te waehere."
+    },
+    "TRANSITIONED_TO_INTERMEDIATE": {
+      "TITLE": "I huri hei Kaiwhakawhanake Pūmanawa Takawaenga — Pipiri 2024",
+      "DESCRIPTION": "I piki ake i te tūranga nohinohi ki te tūranga takawaenga i runga i te mahi whaiaro me te kaha hangarau."
+    },
+    "MERGE_RIGHTS": {
+      "TITLE": "Whakaaetanga Whakakotahi (Dev & Alpha) — Oke 2024",
+      "DESCRIPTION": "I whakawhiwhia ki ngā whakaaetanga whakakotahi i muri i te whakaatu i te pono me te kounga o te mahi."
+    },
+    "TOTY_RUNNER_UP_2024": {
+      "TITLE": "Te Tīma o te Tau (Runner-Up) — Tihe 2024",
+      "DESCRIPTION": "I whakamanahia mō te mahi tonu me te kounga o te tuku mahi puta noa i te hua."
+    },
+    "TOTY_2025": {
+      "TITLE": "I whakawhiwhia ki te tohu Tīma o te Tau — 2025",
+      "DESCRIPTION": "I whakawhiwhia ki te tohu Tīma o te Tau i roto i te 10+ tīma mō te tuku mahi kaha me te mahi tahi."
+    },
+    "FIRST_PRODUCTION_DEPLOYMENT": {
+      "TITLE": "Te Tukunga Tuatahi ki te Production — Tihe 2025",
+      "DESCRIPTION": "I angitū taku tuku mahi tuatahi ki te taiao ora, i mau katoa i te kawenga mō te tukunga."
+    }
+  },
+
+  "SKILL_CATEGORY": {
+    "PROGRAMMING_LANGUAGES": "Reo Tohutohu",
+    "FRAMEWORKS_LIBRARIES": "Anga me ngā Whare Pukapuka",
+    "SOURCE_CONTROL": "Whakahaere Waehere",
+    "CLOUD_DEVOPS": "Kopua me te DevOps",
+    "TOOLS_PLATFORMS": "Taputapu me ngā Pae",
+    "ARCHITECTURE_PRACTICES": "Hoahoanga me ngā Ritenga"
+  },
+
+  "SKILLS": {
+    "TYPESCRIPT": {
+      "TITLE": "TypeScript",
+      "DESCRIPTION": "Whakamahia ai i ia rā ki te hanga tono kaha me te waehere mārama."
+    },
+    "JAVASCRIPT": {
+      "TITLE": "JavaScript",
+      "DESCRIPTION": "Te reo matua mō te hanga tono paetukutuku pāhekoheko."
+    },
+    "CSHARP": {
+      "TITLE": "C#",
+      "DESCRIPTION": "Wheako nui ki te whanake API me ngā ratonga tuarongo."
+    },
+    "HTML": {
+      "TITLE": "HTML",
+      "DESCRIPTION": "Whakamahia hei hanga i te tūāpapa o ngā paetukutuku hou."
+    },
+    "CSS_SCSS": {
+      "TITLE": "CSS / SCSS",
+      "DESCRIPTION": "Wheako kaha ki te hoahoa paetukutuku urutau mā te hoahoanga SCSS."
+    },
+    "SQL": {
+      "TITLE": "SQL",
+      "DESCRIPTION": "Te uiui raraunga me te hoahoa raraunga tōtika."
+    },
+    "ANGULAR": {
+      "TITLE": "Angular",
+      "DESCRIPTION": "Hanga tono whakatini me ngā waahanga ka taea te whakamahi anō."
+    },
+    "NET_ASPNET": {
+      "TITLE": ".NET / ASP.NET Core",
+      "DESCRIPTION": "Hanga ratonga tuarongo haumaru me te arorau pakihi."
+    },
+    "RXJS": {
+      "TITLE": "RxJS",
+      "DESCRIPTION": "Wheako kaha ki te whakahaere rere raraunga tukutahi-kore (async)."
+    },
+    "FULLCALENDAR": {
+      "TITLE": "FullCalendar",
+      "DESCRIPTION": "Hanga whakaritenga wā whakatini me te raupapa rā."
+    },
+    "AZURE_AD_B2C": {
+      "TITLE": "Azure AD B2C",
+      "DESCRIPTION": "Whakatinana whakaurunga haumaru mō ngā kaiwhakamahi."
+    },
+    "ANGULAR_SIGNALS": {
+      "TITLE": "Angular Signals",
+      "DESCRIPTION": "Whakamahi Angular Signals mō te whakahaere āhua (state) reatitū."
+    },
+    "NEXTJS": {
+      "TITLE": "Next.js",
+      "DESCRIPTION": "Whanake kaupapa mōku ake hei tūhura i ngā mahi full-stack hou."
+    },
+    "TAILWIND": {
+      "TITLE": "Tailwind CSS",
+      "DESCRIPTION": "Hanga tahora UI urutau mā te whakamahi Tailwind CSS."
+    },
+    "SUPABASE": {
+      "TITLE": "Supabase",
+      "DESCRIPTION": "Tūhura ana i te Supabase mō te whakahaere raraunga wā-tūturu."
+    },
+    "FIREBASE": {
+      "TITLE": "Firebase",
+      "DESCRIPTION": "Whakamahi i te Firebase mō ngā raraunga wā-tūturu me te tūpuna kopua."
+    },
+    "GIT": {
+      "TITLE": "Git",
+      "DESCRIPTION": "Mahi i ia rā ki te Git mō te whakahaere waehere me te mahi tahi."
+    },
+    "GITHUB": {
+      "TITLE": "GitHub",
+      "DESCRIPTION": "Mahi ki te GitHub mō te whakahaere kaupapa me te mahi tahi tīma."
+    },
+    "AZURE_DEVOPS": {
+      "TITLE": "Azure DevOps",
+      "DESCRIPTION": "Mahi kaha ki te Azure DevOps mō te whakahaere tukunga mahi."
+    },
+    "AZURE": {
+      "TITLE": "Microsoft Azure",
+      "DESCRIPTION": "Tuku me te whakahaere tono kopua i runga i te Azure."
+    },
+    "AZURE_APP_SERVICES": {
+      "TITLE": "Azure App Services",
+      "DESCRIPTION": "Whakamahi i te Azure App Services hei tuku me te whakanui tono."
+    },
+    "VERCEL": {
+      "TITLE": "Vercel",
+      "DESCRIPTION": "Whakamahi i te Vercel hei tuku i aku kaupapa ake me te whakapai ake i te pūngao."
+    },
+    "NODEJS": {
+      "TITLE": "Node.js",
+      "DESCRIPTION": "Whakamahi i te Node.js ki te whanake ratonga tuarongo me ngā API."
+    },
+    "NPM": {
+      "TITLE": "npm",
+      "DESCRIPTION": "Whakamahi i te npm mō te whakahaere kete JavaScript."
+    },
+    "VSCODE": {
+      "TITLE": "Visual Studio Code",
+      "DESCRIPTION": "Te taputapu matua mō te tuhi waehere me te patuiro (debugging)."
+    },
+    "VISUAL_STUDIO": {
+      "TITLE": "Visual Studio",
+      "DESCRIPTION": "Whakamahi mō te whanake tono umanga me te whakamātau waehere."
+    },
+    "REST_APIS": {
+      "TITLE": "REST APIs",
+      "DESCRIPTION": "Hoahoa me te whakatinana API mō te whakawhiti raraunga haumaru."
+    },
+    "JWT_OAUTH": {
+      "TITLE": "JWT / OAuth",
+      "DESCRIPTION": "Whakamahi JWT me te OAuth mō te whakamana haumaru i ngā kaiwhakamahi."
+    },
+    "SQL_DATABASES": {
+      "TITLE": "Pātengi Raraunga SQL",
+      "DESCRIPTION": "Whakahaere raraunga me te whakarite kia tōtika ngā uiuinga."
+    },
+    "FULL_STACK": {
+      "TITLE": "Whanake Full-Stack",
+      "DESCRIPTION": "Hanga me te tiaki tono full-stack mai i te mua ki te tuarongo."
+    },
+    "COMPONENT_ARCHITECTURE": {
+      "TITLE": "Hoahoanga Wāhanga",
+      "DESCRIPTION": "Hoahoa tono mā te whakamahi wāhanga ka taea te whakamahi anō."
+    },
+    "REUSABLE_COMPONENTS": {
+      "TITLE": "Hoahoa Wāhanga Whakamahi Anō",
+      "DESCRIPTION": "hanga i ngā wāhanga ka taea te whakamahi anō hei whakaiti i te wā whanake."
+    },
+    "FRONTEND_BACKEND_SEP": {
+      "TITLE": "Wehenga Frontend-Backend",
+      "DESCRIPTION": "Hoahoa tono me te wehenga mārama i waenga i te mua me te tuarongo."
+    },
+    "RESTFUL_API_DESIGN": {
+      "TITLE": "Hoahoa API RESTful",
+      "DESCRIPTION": "Hoahoa API tōtika mō te kōrero i waenga i ngā ratonga."
+    },
+    "AUTH_FLOWS": {
+      "TITLE": "Whakamana me te Whakaaetanga",
+      "DESCRIPTION": "Hoahoa pūnaha haumaru hei tiaki i ngā raraunga me ngā rauemi."
+    }
+  },
+
+  "ANALYTICS": {
+    "TOTAL_VISITORS": "Tapeke o ngā Manuhiri",
+    "CHART_TITLE": "Ngā Tirohanga mā te Wāhanga",
+    "HERO": "I tirohia te Hero",
+    "CV": "I tirohia te CV",
+    "SKILLS": "I tirohia ngā Pūkenga",
+    "ACHIEVEMENTS": "I tirohia ngā Tutukitanga"
+  },
+
+  "SETTINGS": {
+    "MENU": {
+      "CHANGE_LANGUAGE": "Huri i te Reo",
+      "TITLE": "Tūmau"
+    },
+    "LANGUAGE": {
+      "TITLE": "Kōwhiria te Reo",
+      "DESCRIPTION": "Kōwhiria tō reo pai"
+    }
+  }
+}

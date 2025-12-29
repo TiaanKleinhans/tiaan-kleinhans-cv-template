@@ -1,95 +1,283 @@
 {
+  "ERROR": {
+    "SOMETHING_WENT_WRONG": "Algo salió mal.",
+    "USER_NOT_FOUND": "Lamentamos las molestias. No dude en informarnos sobre este error en ."
+  },
+
   "GENERIC": {
     "CANCEL": "Cancelar"
   },
+
   "INTRODUCTION": {
     "ROLE": "Desarrollador de Software Intermedio",
-    "DISCOVER_MY_SKILL": "Descubrir Mis Habilidades"
+    "DISCOVER_MY_SKILL": "Descubre mis habilidades"
   },
+
   "MENU_ITEMS": {
     "HOME": "Inicio",
     "EXPERIENCE": "Experiencia",
     "DOWNLOAD_RESUME": "Descargar Currículum",
     "CONTACT": "Contacto"
   },
+
   "CV": {
-    "HEADER": "Descargar el Currículum Completo",
-    "BODY": "Para su comodidad, puede descargar una copia completa en PDF de mi currículum para una fácil impresión y revisión.",
-    "DOWNLOAD_CV": "Descargar CV",
+    "TITLE": "¿Quieres los detalles completos?",
+    "HEADER": "Descarga mi CV completo a continuación para saber más.",
+    "BODY": "Para tu comodidad, puedes descargar una copia completa en PDF de mi CV para imprimirlo o revisarlo fácilmente.",
+    "DOWNLOAD_CV": "DESCARGAR CURRÍCULUM",
     "MODAL": {
-      "HEADER": "Seleccionar el Idioma del CV",
-      "TABLE_HEADING": "Por favor, elija su idioma preferido a continuación para descargar el archivo CV.",
-      "LANGUAGE": "Idioma"
+      "HEADER": "Selecciona el idioma del CV",
+      "TABLE_HEADING": "Por favor, elige tu idioma preferido para descargar el archivo del CV.",
+      "LANGUAGE": "Idiomas disponibles"
     }
   },
-  "GOAL_SECTION": {
-    "STARTED_CODING": "Comencé a Programar en la Escuela Secundaria",
-    "STARTED_COLLEGE": "Ingresé a la Universidad para Avanzar Habilidades en Ciencias de la Computación",
-    "STARTED_COMPRSA": "Comencé mi Carrera de Desarrollo Profesional",
-    "PROJECT_FOR_THE_YEAR": "Recibí el Premio 'Proyecto del Año'",
-    "STARTED_CODE_REVIEW": "Asumí Responsabilidades de Revisión de Código Backend",
-    "STARTED_REVIEWING_MERGING": "Asumí la Responsabilidad de Fusión y Despliegue de Código",
-    "BECAME_INTERMIDIAT_DEV": "Avancé a un Rol de Desarrollador Intermedio"
+
+  "CHARTS": {
+    "CORE_PERSONAL_QUALITIES": {
+      "TITLE": "Cualidades Personales Clave",
+      "MOTIVATION": "Motivación",
+      "TRUSTWORTHINESS": "Confiabilidad",
+      "RESPECTFULNESS": "Respeto",
+      "CONFIDENCE": "Confianza",
+      "OPENNESS": "Apertura",
+      "ADAPTABILITY": "Adaptabilidad",
+      "SELF_AWARENESS": "Autoconocimiento"
+    },
+    "CORE_PROFESSIONAL_COMPETENCIES": {
+      "TITLE": "Competencias Profesionales Clave",
+      "CONFLICT_RESOLUTION": "Resolución de Conflictos",
+      "TEAM_ORIENTATION": "Orientación al Equipo",
+      "LEADERSHIP": "Liderazgo",
+      "MENTORSHIP": "Mentoría",
+      "NETWORKING": "Networking",
+      "HUMILITY": "Humildad",
+      "DECISION_MAKING": "Toma de Decisiones"
+    }
   },
+
+  "GOAL_SECTION": {
+    "STARTED_CODING": "Comencé a programar en la secundaria",
+    "STARTED_COLLEGE": "Ingresé a la universidad para avanzar en Ciencias de la Computación",
+    "STARTED_COMPRSA": "Inicié mi carrera de desarrollo profesional",
+    "PROJECT_FOR_THE_YEAR": "Recibí el premio 'Proyecto del Año'",
+    "STARTED_CODE_REVIEW": "Asumí responsabilidades de revisión de código Backend",
+    "STARTED_REVIEWING_MERGING": "Responsable de la fusión de código (merging) y despliegue",
+    "BECAME_INTERMIDIAT_DEV": "Ascendí a Desarrollador de Software Intermedio"
+  },
+
   "MOUNTAIN_SECTION": {
-    "HEADER": "La Ascensión",
+    "HEADER": "El Ascenso",
     "QUOTE": "Con cada paso hacia la cima, subimos de nivel y aprendemos"
   },
+
   "ACCOMPLISHMENTS": {
-    "EXAMPLE_1": "Comencé a trabajar en la empresa",
-    "EXAMPLE_2": "Proyecto importante completado",
-    "EXAMPLE_3": "Certificación obtenida",
-    "EXAMPLE_4": "Iniciativa de equipo liderada"
+    "JUNIOR_SOFTWARE_DEVELOPER": {
+      "TITLE": "Ingreso como Desarrollador de Software Junior — Mayo 2022",
+      "DESCRIPTION": "Comencé mi carrera profesional trabajando en una aplicación de producción con Angular y .NET dentro de un equipo de ingeniería colaborativo."
+    },
+    "TOTY_2023": {
+      "TITLE": "Premio Equipo del Año — Dic 2023",
+      "DESCRIPTION": "Premiado como Equipo del Año entre más de 10 equipos de toda la empresa por la sólida entrega, colaboración e impacto."
+    },
+    "APPOINTMENT_SCHEDULING_SYSTEM": {
+      "TITLE": "Sistema Complejo de Programación de Citas — Feb 2024",
+      "DESCRIPTION": "Diseñé e implementé una función compleja de programación de citas que incluye manejo de zonas horarias, división de citas, lógica recurrente y excepciones de una sola vez en frontend y backend."
+    },
+    "PR_REVIEW_RESPONSIBILITY": {
+      "TITLE": "Responsabilidad de Revisión de Pull Requests — Abr 2024",
+      "DESCRIPTION": "Encargado de revisar y aprobar Pull Requests, asegurando la calidad del código, mantenibilidad y el cumplimiento de los estándares del equipo."
+    },
+    "TRANSITIONED_TO_INTERMEDIATE": {
+      "TITLE": "Transición a Desarrollador de Software Intermedio — Jun 2024",
+      "DESCRIPTION": "Progresé de un rol junior a intermedio basado en el aumento de responsabilidad, capacidad técnica y entrega constante de funcionalidades listas para producción."
+    },
+    "MERGE_RIGHTS": {
+      "TITLE": "Permisos de Fusión Otorgados (Dev y Alpha) — Oct 2024",
+      "DESCRIPTION": "Recibí permisos para fusionar código en entornos de Desarrollo y Alpha tras demostrar confiabilidad, alta calidad de código y comprensión de los flujos de lanzamiento."
+    },
+    "TOTY_RUNNER_UP_2024": {
+      "TITLE": "Finalista a Equipo del Año — Dic 2024",
+      "DESCRIPTION": "Reconocido por la contribución constante, calidad de entrega e impacto continuo en el producto."
+    },
+    "TOTY_2025": {
+      "TITLE": "Premio Equipo del Año — 2025",
+      "DESCRIPTION": "Premiado como Equipo del Año entre más de 10 equipos de toda la empresa por la sólida entrega, colaboración e impacto."
+    },
+    "FIRST_PRODUCTION_DEPLOYMENT": {
+      "TITLE": "Primer Despliegue en Producción — Dic 2025",
+      "DESCRIPTION": "Realicé con éxito mi primer lanzamiento en vivo a producción de forma autónoma, asumiendo la responsabilidad total del proceso de despliegue y la estabilidad post-lanzamiento."
+    }
   },
-  "SKILLS": {
+
+  "SKILL_CATEGORY": {
     "PROGRAMMING_LANGUAGES": "Lenguajes de Programación",
-    "FRAMEWORKS_LIBRARIES": "Frameworks y Bibliotecas",
-    "SOURCE_CONTROL": "Control de Versiones",
+    "FRAMEWORKS_LIBRARIES": "Frameworks y Librerías",
+    "SOURCE_CONTROL": "Control de Código Fuente",
     "CLOUD_DEVOPS": "Cloud y DevOps",
     "TOOLS_PLATFORMS": "Herramientas y Plataformas",
-    "ARCHITECTURE_PRACTICES": "Arquitectura y Prácticas",
-    "TYPESCRIPT": "TypeScript",
-    "JAVASCRIPT": "JavaScript",
-    "CSHARP": "C#",
-    "HTML": "HTML",
-    "CSS_SCSS": "CSS / SCSS",
-    "SQL": "SQL",
-    "ANGULAR": "Angular",
-    "NET_ASPNET": ".NET / ASP.NET Core",
-    "RXJS": "RxJS",
-    "FULLCALENDAR": "FullCalendar",
-    "AZURE_AD_B2C": "Azure AD B2C",
-    "ANGULAR_SIGNALS": "Angular Signals",
-    "NEXTJS": "Next.js",
-    "TAILWIND": "Tailwind CSS",
-    "SUPABASE": "Supabase",
-    "FIREBASE": "Firebase",
-    "GIT": "Git",
-    "GITHUB": "GitHub",
-    "AZURE_DEVOPS": "Azure DevOps",
-    "AZURE": "Microsoft Azure",
-    "AZURE_APP_SERVICES": "Azure App Services",
-    "VERCEL": "Vercel",
-    "NODEJS": "Node.js",
-    "NPM": "npm",
-    "VSCODE": "Visual Studio Code",
-    "VISUAL_STUDIO": "Visual Studio",
-    "REST_APIS": "API REST",
-    "JWT_OAUTH": "JWT / OAuth",
-    "SQL_DATABASES": "Bases de Datos SQL",
-    "FULL_STACK": "Desarrollo Full-Stack",
-    "COMPONENT_ARCHITECTURE": "Arquitectura Basada en Componentes",
-    "REUSABLE_COMPONENTS": "Diseño de Componentes Reutilizables",
-    "FRONTEND_BACKEND_SEP": "Separación Frontend-Backend",
-    "RESTFUL_API_DESIGN": "Diseño de API RESTful",
-    "AUTH_FLOWS": "Autenticación y Autorización"
+    "ARCHITECTURE_PRACTICES": "Arquitectura y Prácticas"
   },
+
+  "SKILLS": {
+    "TYPESCRIPT": {
+      "TITLE": "TypeScript",
+      "DESCRIPTION": "Utilizado a diario para construir aplicaciones escalables y fuertemente tipadas con arquitectura limpia y código mantenible."
+    },
+    "JAVASCRIPT": {
+      "TITLE": "JavaScript",
+      "DESCRIPTION": "Lenguaje principal utilizado para construir aplicaciones web interactivas y responsivas con lógica dinámica en el cliente."
+    },
+    "CSHARP": {
+      "TITLE": "C#",
+      "DESCRIPTION": "Amplia experiencia en el desarrollo de APIs escalables, servicios en segundo plano y lógica de dominio limpia."
+    },
+    "HTML": {
+      "TITLE": "HTML",
+      "DESCRIPTION": "Utilizado para construir estructuras de página bien organizadas y mantenibles que forman la base de las aplicaciones web modernas."
+    },
+    "CSS_SCSS": {
+      "TITLE": "CSS / SCSS",
+      "DESCRIPTION": "Sólida experiencia en la creación de diseños responsivos utilizando una arquitectura SCSS estructurada y escalable."
+    },
+    "SQL": {
+      "TITLE": "SQL",
+      "DESCRIPTION": "Consultas eficientes y modelado de datos."
+    },
+    "ANGULAR": {
+      "TITLE": "Angular",
+      "DESCRIPTION": "Desarrollo de aplicaciones complejas listas para producción con componentes reutilizables y gestión de estado limpia."
+    },
+    "NET_ASPNET": {
+      "TITLE": ".NET / ASP.NET Core",
+      "DESCRIPTION": "Construcción de servicios backend seguros y de alto rendimiento con arquitectura limpia y lógica de negocio."
+    },
+    "RXJS": {
+      "TITLE": "RxJS",
+      "DESCRIPTION": "Sólida experiencia manejando flujos asíncronos complejos mediante el uso de observables y operadores."
+    },
+    "FULLCALENDAR": {
+      "TITLE": "FullCalendar",
+      "DESCRIPTION": "Construcción de programación de citas compleja con lógica de fechas personalizada, manipulación de eventos e integraciones externas."
+    },
+    "AZURE_AD_B2C": {
+      "TITLE": "Azure AD B2C",
+      "DESCRIPTION": "Implementación de autenticación de usuarios segura y escalable con Azure AD B2C, gestionando flujos de registro, inicio de sesión e identidad."
+    },
+    "ANGULAR_SIGNALS": {
+      "TITLE": "Angular Signals",
+      "DESCRIPTION": "Uso de Angular Signals para una gestión de estado reactiva y actualizaciones eficientes de la interfaz de usuario."
+    },
+    "NEXTJS": {
+      "TITLE": "Next.js",
+      "DESCRIPTION": "Desarrollo y mantenimiento de proyectos personales con Next.js, incluyendo este sitio web, para explorar flujos de trabajo full-stack modernos."
+    },
+    "TAILWIND": {
+      "TITLE": "Tailwind CSS",
+      "DESCRIPTION": "Construcción de diseños de interfaz responsivos y consistentes utilizando el enfoque de utilidades de Tailwind CSS."
+    },
+    "SUPABASE": {
+      "TITLE": "Supabase",
+      "DESCRIPTION": "Explorando Supabase en proyectos personales para gestionar autenticación, bases de datos y datos en tiempo real."
+    },
+    "FIREBASE": {
+      "TITLE": "Firebase",
+      "DESCRIPTION": "Uso de Firebase para bases de datos en tiempo real, autenticación y almacenamiento en la nube en aplicaciones de producción."
+    },
+    "GIT": {
+      "TITLE": "Git",
+      "DESCRIPTION": "Trabajo activo con Git para un control de versiones eficiente, gestionando ramificaciones complejas y colaboración en equipos de desarrollo."
+    },
+    "GITHUB": {
+      "TITLE": "GitHub",
+      "DESCRIPTION": "Uso de GitHub para el control de versiones, gestión de ramas y colaboración efectiva dentro de equipos de ingeniería."
+    },
+    "AZURE_DEVOPS": {
+      "TITLE": "Azure DevOps",
+      "DESCRIPTION": "Trabajo activo con Azure DevOps para control de versiones, gestión de tareas y flujos de trabajo de CI/CD."
+    },
+    "AZURE": {
+      "TITLE": "Microsoft Azure",
+      "DESCRIPTION": "Despliegue y gestión regular de aplicaciones en la nube en Azure, utilizando servicios como Azure App Services, Functions y DevOps."
+    },
+    "AZURE_APP_SERVICES": {
+      "TITLE": "Azure App Services",
+      "DESCRIPTION": "Uso de Azure App Services para desplegar, escalar y gestionar aplicaciones web, integrándolas con otros servicios de Azure."
+    },
+    "VERCEL": {
+      "TITLE": "Vercel",
+      "DESCRIPTION": "Uso de Vercel para el despliegue y escalado de proyectos personales, aprovechando funciones serverless y optimización automática."
+    },
+    "NODEJS": {
+      "TITLE": "Node.js",
+      "DESCRIPTION": "Uso de Node.js para desarrollar servicios backend, APIs RESTful y aplicaciones en tiempo real enfocadas en el rendimiento."
+    },
+    "NPM": {
+      "TITLE": "npm",
+      "DESCRIPTION": "Uso de npm para la gestión de dependencias, ejecución de scripts y manejo de paquetes en proyectos basados en JavaScript."
+    },
+    "VSCODE": {
+      "TITLE": "Visual Studio Code",
+      "DESCRIPTION": "Uso de VS Code para codificación eficiente, depuración e integración de control de versiones, personalizando el entorno para flujos óptimos."
+    },
+    "VISUAL_STUDIO": {
+      "TITLE": "Visual Studio",
+      "DESCRIPTION": "Uso de Visual Studio para desarrollar aplicaciones de nivel empresarial, con soporte para depuración, pruebas unitarias y gestión de proyectos."
+    },
+    "REST_APIS": {
+      "TITLE": "APIs REST",
+      "DESCRIPTION": "Arquitectura e implementación de APIs RESTful, asegurando el intercambio eficiente de datos, escalabilidad e integraciones seguras."
+    },
+    "JWT_OAUTH": {
+      "TITLE": "JWT / OAuth",
+      "DESCRIPTION": "Uso de JWT para autenticación basada en tokens y OAuth para autorización segura, garantizando el control de acceso en aplicaciones web."
+    },
+    "SQL_DATABASES": {
+      "TITLE": "Bases de Datos SQL",
+      "DESCRIPTION": "Diseño, optimización y mantenimiento de modelos de datos relacionales, asegurando la integridad de los datos y el rendimiento de las consultas."
+    },
+    "FULL_STACK": {
+      "TITLE": "Desarrollo Full-Stack",
+      "DESCRIPTION": "Construcción y mantenimiento de aplicaciones escalables, integrando frameworks de frontend con servicios backend para experiencias de usuario fluidas."
+    },
+    "COMPONENT_ARCHITECTURE": {
+      "TITLE": "Arquitectura Basada en Componentes",
+      "DESCRIPTION": "Arquitectura de aplicaciones escalables utilizando diseño basado en componentes, enfocándose en piezas modulares y reutilizables."
+    },
+    "REUSABLE_COMPONENTS": {
+      "TITLE": "Diseño de Componentes Reutilizables",
+      "DESCRIPTION": "Creación y optimización regular de componentes reutilizables, mejorando la eficiencia del desarrollo y asegurando consistencia en la UI/UX."
+    },
+    "FRONTEND_BACKEND_SEP": {
+      "TITLE": "Separación Frontend-Backend",
+      "DESCRIPTION": "Implementación de aplicaciones con una separación clara entre frontend y backend para mejorar la escalabilidad y el despliegue independiente."
+    },
+    "RESTFUL_API_DESIGN": {
+      "TITLE": "Diseño de APIs RESTful",
+      "DESCRIPTION": "Diseño de APIs RESTful robustas, enfocándose en la creación de endpoints escalables, gestión eficiente de recursos y comunicación segura."
+    },
+    "AUTH_FLOWS": {
+      "TITLE": "Autenticación y Autorización",
+      "DESCRIPTION": "Arquitectura e implementación de estrategias seguras de acceso, incluyendo OAuth, JWT y roles de usuario para proteger los recursos."
+    }
+  },
+
   "ANALYTICS": {
-    "TOTAL_VISITORS": "Total de Visitantes",
+    "TOTAL_VISITORS": "Visitantes Totales",
     "CHART_TITLE": "Vistas por Sección",
-    "HERO": "Hero Visto",
-    "CV": "CV Visto",
-    "SKILLS": "Habilidades Vistas",
-    "ACHIEVEMENTS": "Logros Vistos"
+    "HERO": "Vio el Hero",
+    "CV": "Vio el CV",
+    "SKILLS": "Vio las Habilidades",
+    "ACHIEVEMENTS": "Vio los Logros"
+  },
+
+  "SETTINGS": {
+    "MENU": {
+      "CHANGE_LANGUAGE": "Cambiar Idioma",
+      "TITLE": "Ajustes"
+    },
+    "LANGUAGE": {
+      "TITLE": "Seleccionar Idioma",
+      "DESCRIPTION": "Elige tu idioma preferido"
+    }
   }
 }

@@ -19,7 +19,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { AvailableTranslations } from '@/constants/locales';
 import { Download } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartCard } from '@/components/ui/chart-card';
@@ -36,7 +35,7 @@ import {
 import { useEffect, useState } from 'react';
 import { LoadingScreen } from '@/components/ui/loading-screen';
 import { useSectionTracking } from '@/hooks/use-section-tracking';
-// import { TRANSLATION_KEYS } from '@/constants/translations';
+import { SettingsMenu } from '@/components/settings-menu';
 
 type User = {
   id: string;
@@ -49,12 +48,20 @@ type User = {
   gitHub?: string;
 };
 
+interface Translation {
+  id: string;
+  code: string;
+  name: string;
+  sortOrder: number;
+  totalDownloads: number;
+}
+
 export default function HomePage() {
   const translate = useTranslations();
   const userId = CurrentUser;
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const availableTranslations = AvailableTranslations;
+  const [availableTranslations, setAvailableTranslations] = useState<Translation[]>([]);
 
   const personalQualitiesConstant = CorePersonalQualitiesConstant.map((_) => ({
     key: translate(_.key),
@@ -66,7 +73,6 @@ export default function HomePage() {
     value: _.value,
   }));
 
-  // Section tracking - must be called before any conditional returns
   useSectionTracking({
     sections: {
       hero: 'hero-section',
@@ -103,19 +109,30 @@ export default function HomePage() {
       }
     }
 
+    async function fetchTranslations() {
+      try {
+        const response = await fetch('/api/translations/available');
+        if (response.ok) {
+          const data = await response.json();
+          setAvailableTranslations(data.translations || []);
+        }
+      } catch (error) {
+        console.error('Error fetching translations:', error);
+      }
+    }
+
     if (userId) {
       fetchUser();
     } else {
       setLoading(false);
     }
+    fetchTranslations();
   }, [userId]);
 
-  // Show loading screen while fetching user data
   if (loading) {
     return <LoadingScreen />;
   }
 
-  // Show error state if user is not found
   if (!user) {
     return (
       <div className="w-full h-screen flex items-center justify-center bg-[var(--primary)]">
@@ -129,7 +146,7 @@ export default function HomePage() {
 
   return (
     <div className="w-full bg-black">
-      {/* ================= HERO SECTION ================= */}
+      <SettingsMenu />
       <section
         id="hero-section"
         className="relative w-full h-screen overflow-hidden flex items-center justify-center"
@@ -144,7 +161,6 @@ export default function HomePage() {
           <div className="w-full h-40 md:h-50 bg-black/30 backdrop-blur-[2px]"></div>
         </div>
 
-        {/* TEXT IN HERO */}
         <div className="relative z-10 flex flex-col items-center text-center text-white">
           <ScrollAnimation>
             <h1 className="text-5xl md:text-6xl font-extrabold drop-shadow-[2px_2px_0px_black]">
@@ -156,8 +172,6 @@ export default function HomePage() {
           </ScrollAnimation>
         </div>
       </section>
-      {/* ================= HERO SECTION ================= */}
-      {/* CV DOWNLOAD SECTION - Gradient transition from hero to fibre optic */}
       <section
         id="cv-section"
         className="pb-0 md:pb-0 lg:pb-0 relative w-full   from-[#1a1a1a] via-black to-black"
@@ -217,14 +231,12 @@ export default function HomePage() {
         </ScrollAnimation>
       </section>
 
-      {/* CV DOWNLOAD SECTION - Gradient transition from hero to fibre optic */}
-
       <section className="relative w-full py-10 overflow-hidden">
         <Image
           src="/images/fibre-optic.jpg"
           alt="Top background"
           fill
-          className="opacity-100 object-cover [mask-image:linear-gradient(to_top,black_80%,transparent)]"
+          className="opacity-100 object-cover [mask-image:linear-gradient(to_top,black_80%,transparent)] [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
         />
         <ScrollAnimation animateOnce={false}>
           <div className="relative z-20 flex flex-wrap justify-center gap-4 sm:gap-4">
@@ -259,65 +271,10 @@ export default function HomePage() {
         </ScrollAnimation>
       </section>
 
-      {/* SKILLS SECTION */}
       <section id="skills-section" className="relative w-full bg-black py-16">
-        {/* <ScrollAnimation animateOnce={false}> */}
         <SkillsSection />
-        {/* </ScrollAnimation> */}
       </section>
 
-      {/* FIBRE OPTIC SECTION - COMMENTED OUT */}
-
-      {/* <section className="relative w-full min-h-screen overflow-hidden bg-black">
-        <Image
-          src="/images/fibre-optic.jpg"
-          alt="Bottom background"
-          fill
-          className="object-cover
-             object-cover
-    [mask-image:linear-gradient(to_top,black_80%,transparent)]
-          "
-        />
-
-        
-
-        <ScrollAnimation animateOnce={false}>
-          <div className="relative z-20 mt-10 flex flex-wrap justify-center gap-4 sm:gap-4">
-            <ChartCard
-              title={translate('CHARTS.CORE_PROFESSIONAL_COMPETENCIES.TITLE')}
-              className="w-[80%] sm:w-[48%] lg:w-[42%]"
-            >
-              <ReusableRadarChart
-                data={professionalCompetencies}
-                angleKey="key"
-                dataKey="value"
-                radiusDomain={[0, 10]}
-                strokeColor="var(--white)"
-                fillColor="var(--white)"
-              />
-            </ChartCard>
-
-            <ChartCard
-              title={translate('CHARTS.CORE_PERSONAL_QUALITIES.TITLE')}
-              className="w-[80%] sm:w-[48%] lg:w-[42%]"
-            >
-              <ReusableRadarChart
-                data={personalQualitiesConstant}
-                angleKey="key"
-                dataKey="value"
-                radiusDomain={[0, 10]}
-                strokeColor="var(--white)"
-                fillColor="var(--white)"
-              />
-            </ChartCard>
-          </div>
-        </ScrollAnimation>
-
-
-        <SkillsSection />
-      </section> */}
-
-      {/* Mountain Section */}
       <section id="mountain-section" className="relative w-full h-screen overflow-hidden">
         <Image
           src="/images/progress-mountain.jpg"
@@ -329,7 +286,6 @@ export default function HomePage() {
    
   "
         />
-        {/* Header and Quote */}
         <div className="absolute top-0 left-0 right-0 z-20 flex flex-col items-center justify-center pt-4 md:pt-6 px-4">
           <ScrollAnimation>
             <h2 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-[2px_2px_4px_rgba(0,0,0,0.8)] text-center">
@@ -343,7 +299,6 @@ export default function HomePage() {
         <AccomplishmentsTimeline />
       </section>
 
-      {/* Analytics Section */}
       <AnalyticsSection />
     </div>
   );

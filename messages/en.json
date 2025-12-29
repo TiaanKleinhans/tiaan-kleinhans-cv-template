@@ -261,5 +261,15 @@
     "CV": "Viewed CV",
     "SKILLS": "Viewed Skills",
     "ACHIEVEMENTS": "Viewed Achievements"
+  },
+  "SETTINGS": {
+    "MENU": {
+      "CHANGE_LANGUAGE": "Change Language",
+      "TITLE": "Settings"
+    },
+    "LANGUAGE": {
+      "TITLE": "Select Language",
+      "DESCRIPTION": "Choose your preferred language"
+    }
   }
 }
