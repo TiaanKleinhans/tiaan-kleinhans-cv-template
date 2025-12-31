@@ -267,7 +267,9 @@
     "HERO": "Section Hero vue",
     "CV": "CV consulté",
     "SKILLS": "Compétences consultées",
-    "ACHIEVEMENTS": "Réalisations consultées"
+    "ACHIEVEMENTS": "Réalisations consultées",
+    "DOWNLOADS_CHART_TITLE": "Téléchargements de CV par Langue",
+    "DOWNLOADS_LABEL": "Téléchargements"
   },
 
   "SETTINGS": {

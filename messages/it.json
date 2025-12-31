@@ -267,7 +267,9 @@
     "HERO": "Visto Hero",
     "CV": "Visto CV",
     "SKILLS": "Visto Skill",
-    "ACHIEVEMENTS": "Visto Traguardi"
+    "ACHIEVEMENTS": "Visto Traguardi",
+    "DOWNLOADS_CHART_TITLE": "Download CV per Lingua",
+    "DOWNLOADS_LABEL": "Download"
   },
 
   "SETTINGS": {

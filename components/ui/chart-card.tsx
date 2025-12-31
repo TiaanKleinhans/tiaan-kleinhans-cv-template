@@ -15,7 +15,9 @@ export function ChartCard({ title, description, children, className = '' }: Char
       <CardHeader>
         <CardTitle className="text-center">{title}</CardTitle>
         {description && (
-          <CardDescription className="text-center text-gray-300">{description}</CardDescription>
+          <CardDescription className="text-center text-white opacity-70">
+            {description}
+          </CardDescription>
         )}
       </CardHeader>
 

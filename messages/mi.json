@@ -267,7 +267,9 @@
     "HERO": "I tirohia te Hero",
     "CV": "I tirohia te CV",
     "SKILLS": "I tirohia ngā Pūkenga",
-    "ACHIEVEMENTS": "I tirohia ngā Tutukitanga"
+    "ACHIEVEMENTS": "I tirohia ngā Tutukitanga",
+    "DOWNLOADS_CHART_TITLE": "Tikiake CV mā te Reo",
+    "DOWNLOADS_LABEL": "Ngā Tikiake"
   },
 
   "SETTINGS": {

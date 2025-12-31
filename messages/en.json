@@ -260,7 +260,9 @@
     "HERO": "Viewed Hero",
     "CV": "Viewed CV",
     "SKILLS": "Viewed Skills",
-    "ACHIEVEMENTS": "Viewed Achievements"
+    "ACHIEVEMENTS": "Viewed Achievements",
+    "DOWNLOADS_CHART_TITLE": "CV Downloads by Language",
+    "DOWNLOADS_LABEL": "Downloads"
   },
   "SETTINGS": {
     "MENU": {

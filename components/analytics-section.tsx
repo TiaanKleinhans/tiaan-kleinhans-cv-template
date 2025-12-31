@@ -11,6 +11,7 @@ import {
   type ChartConfig,
 } from '@/components/ui/chart';
 import { RadialBarChart, RadialBar, LabelList } from 'recharts';
+import { LanguageDownloadsChart } from '@/components/ui/language-downloads-chart';
 
 // Blue color gradient from light to dark (matching the image)
 const COLORS = ['#3b82f6', '#2563eb', '#1d4ed8', '#1e40af'];
@@ -61,7 +62,7 @@ export function AnalyticsSection() {
       <section className="relative w-full bg-[#1a1a1a] py-16">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-center">
-            <p className="text-red-400">Error loading analytics</p>
+            <p className="text-white">Error loading analytics...</p>
           </div>
         </div>
       </section>
@@ -134,7 +135,7 @@ export function AnalyticsSection() {
   return (
     <section className="relative w-full bg-[#1a1a1a] py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+        <div className="flex flex-col items-center justify-center gap-8">
           {/* Total Visitors - Center */}
           <div className="flex flex-col items-center justify-center">
             <div className="text-6xl md:text-7xl font-bold text-white mb-2">
@@ -145,49 +146,57 @@ export function AnalyticsSection() {
             </div>
           </div>
 
-          {/* Radial Bar Chart */}
-          <div className="w-full max-w-4xl py-4 md:py-8 px-2 md:px-0">
-            <h3 className="text-xl md:text-2xl font-semibold text-white text-center mb-4">
-              {translate('ANALYTICS.CHART_TITLE')}
-            </h3>
-            <ChartContainer
-              config={chartConfig}
-              className="mx-auto aspect-square max-h-[400px] sm:max-h-[600px] md:max-h-[1000px]"
-            >
-              <RadialBarChart
-                data={chartData}
-                startAngle={-90}
-                endAngle={380}
-                innerRadius={30}
-                outerRadius={110}
+          {/* Charts Container - Side by side on large, stacked on small */}
+          <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
+            {/* Section Views Chart */}
+            <div className="w-full lg:w-1/2 flex flex-col items-center">
+              <h3 className="text-xl md:text-2xl font-semibold text-white text-center mb-4">
+                {translate('ANALYTICS.CHART_TITLE')}
+              </h3>
+              <ChartContainer
+                config={chartConfig}
+                className="w-full aspect-square max-h-[400px] sm:max-h-[500px] lg:max-h-[600px]"
               >
-                <ChartTooltip
-                  cursor={false}
-                  content={({ active, payload }) => {
-                    if (!active || !payload?.length) return null;
-                    const data = payload[0] as any;
-                    return (
-                      <ChartTooltipContent>
-                        <div className="flex flex-col gap-1">
-                          <div className="font-semibold">{data.payload.label}</div>
-                          <div className="text-sm opacity-80">
-                            {data.value}% ({data.payload.count} views)
+                <RadialBarChart
+                  data={chartData}
+                  startAngle={-90}
+                  endAngle={380}
+                  innerRadius={30}
+                  outerRadius={110}
+                >
+                  <ChartTooltip
+                    cursor={false}
+                    content={({ active, payload }) => {
+                      if (!active || !payload?.length) return null;
+                      const data = payload[0] as any;
+                      return (
+                        <ChartTooltipContent>
+                          <div className="flex flex-col gap-1">
+                            <div className="font-semibold text-white">{data.payload.label}</div>
+                            <div className="text-sm text-white opacity-80">
+                              {data.value}% ({data.payload.count} views)
+                            </div>
                           </div>
-                        </div>
-                      </ChartTooltipContent>
-                    );
-                  }}
-                />
-                <RadialBar dataKey="value" background={{ fill: '#2a2a2a' }} cornerRadius={4}>
-                  <LabelList
-                    position="insideStart"
-                    dataKey="labelWithValue"
-                    className="fill-white"
-                    fontSize={12}
+                        </ChartTooltipContent>
+                      );
+                    }}
                   />
-                </RadialBar>
-              </RadialBarChart>
-            </ChartContainer>
+                  <RadialBar dataKey="value" background={{ fill: '#2a2a2a' }} cornerRadius={4}>
+                    <LabelList
+                      position="insideStart"
+                      dataKey="labelWithValue"
+                      className="fill-white"
+                      fontSize={12}
+                    />
+                  </RadialBar>
+                </RadialBarChart>
+              </ChartContainer>
+            </div>
+
+            {/* Language Downloads Chart */}
+            <div className="w-full lg:w-1/2">
+              <LanguageDownloadsChart />
+            </div>
           </div>
         </div>
       </div>

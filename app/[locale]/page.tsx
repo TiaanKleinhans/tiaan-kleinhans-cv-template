@@ -209,18 +209,38 @@ export default function HomePage() {
                       </TableHeader>
 
                       <TableBody>
-                        {availableTranslations.map((_, index) => (
-                          <TableRow
-                            key={_.code}
-                            className="border-b border-gray-300 hover:bg-gray-900 cursor-pointer"
-                          >
-                            <TableCell className="flex items-center justify-center font-medium">
-                              <a href={`files/${_.code}.zip`} download>
+                        {availableTranslations.map((_, index) => {
+                          const handleDownload = async (e: React.MouseEvent) => {
+                            e.preventDefault();
+                            try {
+                              // Increment download count
+                              await fetch(`/api/translations/${_.code}/increment-download`, {
+                                method: 'POST',
+                              });
+                            } catch (error) {
+                              console.error('Error tracking download:', error);
+                            }
+                            // Trigger actual download
+                            const link = document.createElement('a');
+                            link.href = `files/${_.code}.zip`;
+                            link.download = '';
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                          };
+
+                          return (
+                            <TableRow
+                              key={_.code}
+                              className="border-b border-gray-300 hover:bg-gray-900 cursor-pointer"
+                              onClick={handleDownload}
+                            >
+                              <TableCell className="flex items-center justify-center font-medium">
                                 {_.name}
-                              </a>
-                            </TableCell>
-                          </TableRow>
-                        ))}
+                              </TableCell>
+                            </TableRow>
+                          );
+                        })}
                       </TableBody>
                     </Table>
                   </ScrollAnimation>

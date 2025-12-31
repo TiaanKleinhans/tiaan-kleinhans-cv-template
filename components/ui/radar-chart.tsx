@@ -61,13 +61,18 @@ export function ReusableRadarChart({
             data={data}
             margin={{ top: 30, bottom: 30, left: 20, right: 20 }}
           >
-            <PolarGrid stroke="#B0B8C1" strokeOpacity={0.5} gridType="polygon" radialLines />
+            <PolarGrid stroke={strokeColor} strokeOpacity={0.5} gridType="polygon" radialLines />
 
-            <PolarAngleAxis dataKey={angleKey} tick={{ fill: '#ccc', fontSize: 12 }} />
+            <PolarAngleAxis dataKey={angleKey} tick={{ fill: strokeColor, fontSize: 12 }} />
 
-            <PolarRadiusAxis angle={65} domain={radiusDomain} stroke="#B0B8C1" tickCount={5} />
+            <PolarRadiusAxis
+              angle={65}
+              domain={radiusDomain}
+              stroke={strokeColor}
+              tick={{ fill: strokeColor }}
+              tickCount={5}
+            />
 
-            {/* ⭐ Clean & simple tooltip */}
             <Tooltip content={<CleanRadarTooltip />} />
 
             <Radar

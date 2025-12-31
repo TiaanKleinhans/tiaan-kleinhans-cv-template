@@ -267,7 +267,9 @@
     "HERO": "Vio el Hero",
     "CV": "Vio el CV",
     "SKILLS": "Vio las Habilidades",
-    "ACHIEVEMENTS": "Vio los Logros"
+    "ACHIEVEMENTS": "Vio los Logros",
+    "DOWNLOADS_CHART_TITLE": "Descargas de CV por Idioma",
+    "DOWNLOADS_LABEL": "Descargas"
   },
 
   "SETTINGS": {

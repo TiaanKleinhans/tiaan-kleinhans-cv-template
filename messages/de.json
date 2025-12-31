@@ -267,7 +267,9 @@
     "HERO": "Hero-Bereich angesehen",
     "CV": "Lebenslauf angesehen",
     "SKILLS": "Fähigkeiten angesehen",
-    "ACHIEVEMENTS": "Erfolge angesehen"
+    "ACHIEVEMENTS": "Erfolge angesehen",
+    "DOWNLOADS_CHART_TITLE": "Lebenslauf-Downloads nach Sprache",
+    "DOWNLOADS_LABEL": "Downloads"
   },
 
   "SETTINGS": {
