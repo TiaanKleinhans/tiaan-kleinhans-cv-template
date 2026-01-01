@@ -110,8 +110,9 @@ export function LanguageDownloadsChart() {
       <h3 className="text-xl md:text-2xl font-semibold text-white text-center mb-4">
         {translate('ANALYTICS.DOWNLOADS_CHART_TITLE')}
       </h3>
-      <ChartContainer config={chartConfig} className="w-full h-[300px] max-h-[500px] lg:max-h-[600px]">
-        <BarChart data={chartData} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+      <div className="w-full flex justify-center">
+        <ChartContainer config={chartConfig} className="w-full max-w-full h-[300px] max-h-[500px] lg:max-h-[600px]">
+          <BarChart data={chartData} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
           <CartesianGrid vertical={false} stroke="#ffffff" strokeOpacity={0.1} />
           <XAxis
             dataKey="code"
@@ -152,6 +153,7 @@ export function LanguageDownloadsChart() {
           />
         </BarChart>
       </ChartContainer>
+      </div>
     </div>
   );
 }

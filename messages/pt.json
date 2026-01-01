@@ -25,6 +25,7 @@
     "HEADER": "Baixe meu currículo completo abaixo para saber mais.",
     "BODY": "Para sua conveniência, você pode baixar uma cópia completa em PDF do meu currículo para fácil impressão e revisão.",
     "DOWNLOAD_CV": "BAIXAR CURRÍCULO",
+    "DOWNLOAD_TOAST": "O download começará em breve",
     "MODAL": {
       "HEADER": "Selecione o Idioma do Currículo",
       "TABLE_HEADING": "Por favor, escolha seu idioma de preferência abaixo para baixar o arquivo.",

@@ -25,6 +25,7 @@
     "HEADER": "Descarga mi CV completo a continuación para saber más.",
     "BODY": "Para tu comodidad, puedes descargar una copia completa en PDF de mi CV para imprimirlo o revisarlo fácilmente.",
     "DOWNLOAD_CV": "DESCARGAR CURRÍCULUM",
+    "DOWNLOAD_TOAST": "La descarga comenzará pronto",
     "MODAL": {
       "HEADER": "Selecciona el idioma del CV",
       "TABLE_HEADING": "Por favor, elige tu idioma preferido para descargar el archivo del CV.",

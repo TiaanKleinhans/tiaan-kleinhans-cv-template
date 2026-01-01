@@ -19,7 +19,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Download } from 'lucide-react';
+import { Download, CheckCircle2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartCard } from '@/components/ui/chart-card';
 import { ReusableRadarChart } from '@/components/ui/radar-chart';
@@ -32,7 +32,7 @@ import {
   CorePersonalQualitiesConstant,
   CoreProfessionalCompetenciesConstant,
 } from '@/constants/chart-data';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { LoadingScreen } from '@/components/ui/loading-screen';
 import { useSectionTracking } from '@/hooks/use-section-tracking';
 import { SettingsMenu } from '@/components/settings-menu';
@@ -62,6 +62,9 @@ export default function HomePage() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [availableTranslations, setAvailableTranslations] = useState<Translation[]>([]);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const toastTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const personalQualitiesConstant = CorePersonalQualitiesConstant.map((_) => ({
     key: translate(_.key),
@@ -129,6 +132,15 @@ export default function HomePage() {
     fetchTranslations();
   }, [userId]);
 
+  // Cleanup toast timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (toastTimeoutRef.current) {
+        clearTimeout(toastTimeoutRef.current);
+      }
+    };
+  }, []);
+
   if (loading) {
     return <LoadingScreen />;
   }
@@ -182,7 +194,7 @@ export default function HomePage() {
               <h2 className="opacity-90 mb-6">{translate('CV.TITLE')}</h2>
               <h2 className="opacity-90 mb-6">{translate('CV.HEADER')}</h2>
 
-              <Dialog>
+              <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                 <ScrollAnimation animateOnce={false}>
                   <DialogTrigger className="border border-green-400 px-6 py-2 rounded text-green-400 hover:bg-green-400 hover:text-black transition">
                     {translate('CV.DOWNLOAD_CV')}
@@ -212,6 +224,13 @@ export default function HomePage() {
                         {availableTranslations.map((_, index) => {
                           const handleDownload = async (e: React.MouseEvent) => {
                             e.preventDefault();
+
+                            // Close dialog
+                            setDialogOpen(false);
+
+                            // Show toast
+                            setShowToast(true);
+
                             try {
                               // Increment download count
                               await fetch(`/api/translations/${_.code}/increment-download`, {
@@ -220,13 +239,25 @@ export default function HomePage() {
                             } catch (error) {
                               console.error('Error tracking download:', error);
                             }
+
+                            // Clear any existing timeout
+                            if (toastTimeoutRef.current) {
+                              clearTimeout(toastTimeoutRef.current);
+                            }
+
                             // Trigger actual download
                             const link = document.createElement('a');
-                            link.href = `files/${_.code}.zip`;
-                            link.download = '';
+                            link.href = `/files/Tiaan-Kleinhans-${_.code}.zip`;
+                            link.download = `Tiaan-Kleinhans-${_.code}.zip`;
                             document.body.appendChild(link);
                             link.click();
                             document.body.removeChild(link);
+
+                            // Hide toast after 2 seconds
+                            toastTimeoutRef.current = setTimeout(() => {
+                              setShowToast(false);
+                              toastTimeoutRef.current = null;
+                            }, 2000);
                           };
 
                           return (
@@ -320,6 +351,14 @@ export default function HomePage() {
       </section>
 
       <AnalyticsSection />
+
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 md:bottom-auto md:left-auto md:top-8 md:right-8 md:translate-x-0 z-[200] bg-[var(--primary)] text-white px-6 py-3 rounded-lg shadow-lg border border-white/20 animate-in fade-in slide-in-from-bottom-4 md:slide-in-from-top-4 duration-300 flex items-center gap-3">
+          <CheckCircle2 className="w-[1.375rem] h-[1.375rem] text-[var(--secondary)] animate-in zoom-in duration-300" />
+          <p className="text-white font-medium">{translate('CV.DOWNLOAD_TOAST')}</p>
+        </div>
+      )}
     </div>
   );
 }

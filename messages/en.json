@@ -24,6 +24,7 @@
     "HEADER": "Download my complete CV below to learn more.",
     "BODY": "For your convenience, you can download a complete PDF copy of my CV for easy printing and review.",
     "DOWNLOAD_CV": "DOWNLOAD RESUME",
+    "DOWNLOAD_TOAST": "Download will start soon",
     "MODAL": {
       "HEADER": "Select Your CV Language",
       "TABLE_HEADING": "Please choose your preferred language below to download the CV file.",
